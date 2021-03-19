@@ -37,7 +37,7 @@ const RecipeSearch = () => {
                     placeholder="i.e. Keto pancakes"/>
                 <button className="button" type="submit">Search</button>
         </form>
-      <div className='container'>{showList}</div>
+      <div className='card-container'>{showList}</div>
         </>
     )
 }

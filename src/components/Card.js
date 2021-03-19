@@ -7,11 +7,11 @@ const Card = ({
     uri
 }) => {
     return (
-        <div className='container-element'>
+        <div className='card'>
             <p>{label}</p>
              <img src={image} />
              <br/>
-             <ul>{ingredientLines}</ul>
+             <ul className="ingr">{ingredientLines}</ul>
              <br />
              <a className="small" href={uri} > {label}</a>
             <hr/>

@@ -71,10 +71,6 @@ small {
   background-color: rgb(53, 158, 85);
   border: 1px solid mediumseagreen;
 }
-
-img {
-  
-}
   
   .input {
       margin-bottom: 0;
@@ -97,10 +93,21 @@ img {
     color: white;
     font-size: 3rem;
   }
+.card {
+height: 500px;
+width: 250px;
+border: 1px solid green;
+}
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  grid-auto-rows: minmax(100px, auto);
+}
+.ingr {
 
-.app {
-  grid-template-areas: 'footer header'
-                        ' main  main';
-                        grid-template-rows: 50px 1fr 30px;
-                        grid-template-columns: 150px 1fr;
+}
+
+img {
+  height: ;
 }
