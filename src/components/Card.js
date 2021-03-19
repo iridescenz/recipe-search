@@ -8,8 +8,8 @@ const Card = ({
 }) => {
     return (
         <div className='card'>
-            <p>{label}</p>
-             <img src={image} />
+            <p className='label'>{label}</p>
+             <img src={image} alt={label} />
              <br/>
              <ul className="ingr">{ingredientLines}</ul>
              <br />

@@ -24,7 +24,7 @@ small {
 
 .container {
   margin: 0 auto;
-  max-width:1000px;
+  max-width:1200px;
   padding: 40px;
   background-color: white;
 }
@@ -36,6 +36,9 @@ small {
 
 .form {
   display:grid;
+  margin: 0 auto;
+  max-width: 900px;
+
 }
 
 .label {
@@ -77,37 +80,42 @@ small {
   }
 
   .site-header {
-    grid-area: header;
     margin: 0 auto;
-    max-width:1000px;
+    max-width:1200px;
     padding: 40px;
     background-color: rgba(0,0,0,0.85);
     color: white;
     font-size: 3rem;
   }
-  .site-footer {
-    margin: 0 auto;
-    max-width:1000px;
-    padding: 40px;
-    background-color: rgba(0,0,0,0.85);
-    color: white;
-    font-size: 3rem;
-  }
+.site-footer {
+  margin: 0 auto;
+  max-width:1200px;
+  padding: 40px;
+  background-color: rgba(0,0,0,0.85);
+  color: white;
+  font-size: 3rem;
+}
 .card {
-height: 500px;
-width: 250px;
-border: 1px solid green;
+  align-items: center;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border: 1px solid green;
+  padding: 20px 20px 20px 20px;
 }
 .card-container {
+  align-items: center;
+  margin-top: 50px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 50px;
-  grid-auto-rows: minmax(100px, auto);
+  grid-template-columns: repeat( auto-fit, minmax(270px, 1fr) );
+
 }
 .ingr {
 
 }
 
 img {
-  height: ;
+  height: 240px;
+  width: auto;
 }
