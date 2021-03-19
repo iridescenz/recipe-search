@@ -1,12 +1,11 @@
 import React from 'react';
 
-
-export default function Card({
+const Card = ({
     label,
     ingredientLines,
     image,
     uri
-}) {
+}) => {
     return (
         <div className='container-element'>
             <p>{label}</p>
@@ -19,3 +18,4 @@ export default function Card({
         </div>
     )
 }
+export default Card

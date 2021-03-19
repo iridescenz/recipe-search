@@ -2,7 +2,7 @@ import React from 'react';
 import RecipeSearch from './RecipeSearch'
 import Api from './Api'
 
-function Main() {
+const Main = () => {
   return (
 
         <div className="container">

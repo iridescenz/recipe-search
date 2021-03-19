@@ -63,6 +63,7 @@ small {
   font-size: 1.4rem;
   cursor: pointer;
   margin-top: 5px;
+  outline: none;
   transition: background-color 250ms;
 }
 
