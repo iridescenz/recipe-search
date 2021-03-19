@@ -43,7 +43,7 @@ small {
 
 .label {
   font-size: 1.2rem;
-  margin-bottom: 0.2rem;
+  margin-bottom: 1rem;
   text-transform: uppercase;
 }
 
@@ -105,11 +105,10 @@ small {
   padding: 20px 20px 20px 20px;
 }
 .card-container {
-  align-items: center;
   margin-top: 50px;
   display: grid;
+ 
   grid-template-columns: repeat( auto-fit, minmax(270px, 1fr) );
-
 }
 .ingr {
 
