@@ -1,17 +1,14 @@
 import React, {useState} from 'react'
-import RecipeSearch from './RecipeSearch'
-import searchRecipe from './RecipeSearch'
+import axios from "axios"
 
-const SearchForm = ({query, setQuery}) => {
+const SearchForm = () => {
     const [query, setQuery] = useState('');
-    let [data, setData] = useState('');
-
-    const searchRecipe =  (e) => {
+    const [result, setResult]  = useState('')
+    const searchRecipe =  async (e) => {
         e.preventDefault();
         const apiId = `a6975102&app_key=3e6a54f8480af0f1dfb6d7dc3c5cb3cd`
-        const res = axios.get(`https://api.edamam.com/search?q=${query}&app_id=${apiId}&from=0&to=30&`)
-        .then(res => setData(res.data))
-        .catch(er => console.log(er))
+        const res = await axios.get(`https://api.edamam.com/search?q=${query}&app_id=${apiId}&from=0&to=30&`)
+        importantData.push(res.data.hits)
         setQuery('')
     }
     return (
@@ -30,3 +27,4 @@ const SearchForm = ({query, setQuery}) => {
     )
 }
 export default SearchForm
+export { importantData }

@@ -1,25 +1,18 @@
-import React, { useState} from "react";
+import React from "react";
 import Card from './Card'
-import axios from "axios"
-
+import {importantData} from './SearchForm'
 
 const RecipeSearch = () => {
-   
-
-    const showList = data.count  
-    ? data.hits.map(el => el.recipe).map((el, i) => 
-        <Card key={i} 
-        label={el.label}
-        uri={el.url} 
-        image={el.image}
-        ingredientLines={el.ingredientLines.map((el, i) => <li key={i} >{el}</li>)}
-        />) 
-        : data.count === 0 ? <h1> No results found</h1> : ''
-    
+    console.log(importantData)
+    const elem = importantData && importantData.map(el => el.recipe.map((el, i) => 
+            <Card key={i} 
+            label={el.label}
+            uri={el.url} 
+            image={el.image}
+            ingredientLines={el.ingredientLines.map((el, i) => <li key={i} >{el}</li>)}
+            />))
     return (
-        <>
-      <div className='card-container'>{showList}</div>
-        </>
+        <div className='card-container'>{elem}</div>
     )
 }
 export default RecipeSearch
