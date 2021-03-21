@@ -1,18 +1,42 @@
-import React from "react";
+import React, { useState} from "react";
 import Card from './Card'
-import {importantData} from './SearchForm'
+import axios from "axios"
 
 const RecipeSearch = () => {
-    console.log(importantData)
-    const elem = importantData && importantData.map(el => el.recipe.map((el, i) => 
-            <Card key={i} 
-            label={el.label}
-            uri={el.url} 
-            image={el.image}
-            ingredientLines={el.ingredientLines.map((el, i) => <li key={i} >{el}</li>)}
-            />))
+    const [query, setQuery] = useState('');
+    let [data, setData] = useState('');
+    const searchRecipe =  (e) => {
+        e.preventDefault();
+        const apiId = `a6975102&app_key=3e6a54f8480af0f1dfb6d7dc3c5cb3cd`
+        const res = axios.get(`https://api.edamam.com/search?q=${query}&app_id=${apiId}&from=0&to=30&ingr=10`)
+        .then(res => setData(res.data))
+        .catch(er => console.log(er))
+        setQuery('')
+    }
+    const showList = data.count  
+    ? data.hits.map(el => el.recipe).map((el, i) => 
+        <Card key={i} 
+        label={el.label}
+        uri={el.url} 
+        image={el.image}
+        ingredientLines={el.ingredientLines.map((el, i) => <li key={i} >{el}</li>)}
+        />) 
+        : data.count === 0 ? <h1> No results found</h1> : ''
+    
     return (
-        <div className='card-container'>{elem}</div>
+        <>
+        <form className="form" onSubmit={searchRecipe}>
+            <label className="label" htmlFor="query">search for a recipe</label>
+                <input className="input" 
+                    type="text" 
+                    name="query"
+                    value={query}
+                    onChange={(e) => {setQuery(e.target.value)}}
+                    placeholder="i.e. Keto pancakes"/>
+                <button className="button" type="submit">Search</button>
+        </form>
+      <div className='card-container'>{showList}</div>
+        </>
     )
 }
 export default RecipeSearch

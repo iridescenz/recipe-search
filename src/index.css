@@ -1,11 +1,25 @@
 html {
   font-size: 10px;
   margin: 0;
+  font-family: 'Roboto', serif;
 }
 
 * {
   box-sizing: border-box;
 }
+
+@media (max-width: 500px) { 
+  html {
+    font-size: 7px
+  }
+  .site-header {
+    max-width:500px;
+    padding: 40px;
+    height: 100px;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+ }
 
 body {
   margin: 0;
@@ -82,24 +96,28 @@ small {
   .site-header {
     display: flex;
     flex-direction: row;
-    margin: 0 auto;
     max-width:1200px;
     padding: 40px;
     background-color: rgba(0,0,0,0.85);
     color: white;
-    font-size: 3rem;
+    font-size: 2rem;
+    margin: 0 auto;
+    justify-content: center;
+
   }
  .site-header  > div {
-    margin-left: 2rem;
+    text-transform: uppercase;
+    margin: 10px 20px;
+    justify-content: center;
   }
 .site-footer {
-  margin: 0 auto;
-  max-width:1200px;
-  padding: 40px;
   background-color: rgba(0,0,0,0.85);
   color: white;
   font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
 }
+
 .card {
   align-items: center;
   height: 500px;

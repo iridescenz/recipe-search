@@ -1,6 +1,6 @@
 import React from 'react';
 import RecipeSearch from './RecipeSearch'
-import Api from './Api'
+
 
 const Main = () => {
   return (
@@ -8,7 +8,6 @@ const Main = () => {
         <div className="container">
         <h1 className="title">This is main</h1>
         <RecipeSearch />
-        <Api />
     </div>
   )
 }

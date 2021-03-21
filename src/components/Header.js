@@ -1,5 +1,5 @@
 import React from 'react'
-import SearchForm from './SearchForm'
+
 
 const Header = () => {
     return (
@@ -8,7 +8,7 @@ const Header = () => {
            <div>About</div>
            <div>Low-carb recipes</div>
            <div>Nutrition facts</div>
-           <SearchForm />
+           <div>Recipes search</div>
         </div>
     )
 }
