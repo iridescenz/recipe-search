@@ -80,12 +80,17 @@ small {
   }
 
   .site-header {
+    display: flex;
+    flex-direction: row;
     margin: 0 auto;
     max-width:1200px;
     padding: 40px;
     background-color: rgba(0,0,0,0.85);
     color: white;
     font-size: 3rem;
+  }
+ .site-header  > div {
+    margin-left: 2rem;
   }
 .site-footer {
   margin: 0 auto;
