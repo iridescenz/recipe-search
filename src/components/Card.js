@@ -4,7 +4,7 @@ const Card = ({
     label,
     ingredientLines,
     image,
-    uri
+    url
 }) => {
     return (
         <div className='card'>
@@ -13,7 +13,7 @@ const Card = ({
              <br/>
              <ul className="ingr">{ingredientLines}</ul>
              <br />
-             <a className="small" href={uri} > {label}</a>
+             <a className="url" href={url} > {label}</a>
             <hr/>
         </div>
     )

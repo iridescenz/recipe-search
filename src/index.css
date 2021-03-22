@@ -1,11 +1,8 @@
 html {
   font-size: 10px;
   margin: 0;
+  height: 100%;
   font-family: 'Roboto', serif;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 @media (max-width: 500px) { 
@@ -19,8 +16,12 @@ html {
     text-align: center;
     font-size: 0.8rem;
   }
+}
+ @media (min-width: 1400px) { 
+  html {
+    font-size: 15px
+  }
  }
-
 body {
   margin: 0;
   padding: 0;
@@ -89,30 +90,37 @@ small {
   border: 1px solid mediumseagreen;
 }
   
-  .input {
-      margin-bottom: 0;
-  }
+.input {
+  margin-bottom: 0;
+}
 
-  .site-header {
-    display: flex;
-    flex-direction: row;
-    max-width:1200px;
-    padding: 40px;
-    background-color: rgba(0,0,0,0.85);
-    color: white;
-    font-size: 2rem;
-    margin: 0 auto;
-    justify-content: center;
-
-  }
- .site-header  > div {
-    text-transform: uppercase;
-    margin: 10px 20px;
-    justify-content: center;
-  }
-.site-footer {
+.site-header {
+  display: flex;
+  flex-direction: row;
+  max-width:1200px;
+  padding: 40px;
   background-color: rgba(0,0,0,0.85);
   color: white;
+  font-size: 2rem;
+  margin: 0 auto;
+  justify-content: center;
+
+}
+.site-header  > div {
+  text-transform: uppercase;
+  margin: 10px 20px;
+  justify-content: center;
+  cursor: pointer;
+}
+.site-footer {
+  max-width:1200px;
+  display: flex;
+  margin: 0 auto;
+  background-color: rgba(0,0,0,0.85);
+  color: white;
+}
+.site-footer > div {
+  width: 1200px;
   font-size: 3rem;
   text-align: center;
   text-transform: uppercase;
@@ -120,24 +128,27 @@ small {
 
 .card {
   align-items: center;
-  height: 500px;
+  justify-self: center;
+  height: 50rem;
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 30rem;
   border: 1px solid green;
-  padding: 20px 20px 20px 20px;
 }
 .card-container {
-  margin-top: 50px;
+  margin-top: 5rem;
   display: grid;
- 
-  grid-template-columns: repeat( auto-fit, minmax(270px, 1fr) );
+  grid-template-columns: repeat( auto-fit, minmax(27rem, 1fr) );
 }
 .ingr {
-
+font-size: 1,5rem;
 }
 
 img {
-  height: 240px;
+  height: 24rem;
   width: auto;
+}
+
+.app {
+  min-height: 100%;
 }

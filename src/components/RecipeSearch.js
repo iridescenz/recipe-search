@@ -17,7 +17,7 @@ const RecipeSearch = () => {
     ? data.hits.map(el => el.recipe).map((el, i) => 
         <Card key={i} 
         label={el.label}
-        uri={el.url} 
+        url={el.url} 
         image={el.image}
         ingredientLines={el.ingredientLines.map((el, i) => <li key={i} >{el}</li>)}
         />) 
