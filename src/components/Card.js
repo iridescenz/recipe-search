@@ -1,5 +1,5 @@
 import React from 'react';
-import { AiFillCaretDown } from 'react-icons/ai'
+import { BsCaretDown } from 'react-icons/bs'
 
 const Card = ({
     label,
@@ -9,13 +9,11 @@ const Card = ({
 }) => {
     return (
         <div className='card'>
-            <p className='label'>{label}</p>
+            <a href={url} className='label'>{label}</a>
              <img src={image} alt={label} />
              <br/>
-            <div className='carret'> <AiFillCaretDown /> </div>
+            <div className='caret'> <BsCaretDown /> </div>
              <ul className='ingr'>{ingredientLines}</ul>
-             <br />
-             <a className='url' href={url} > {label}</a>
             <hr/>
         </div>
     )
