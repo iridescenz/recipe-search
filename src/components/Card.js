@@ -1,4 +1,5 @@
 import React from 'react';
+import { AiFillCaretDown } from 'react-icons/ai'
 
 const Card = ({
     label,
@@ -11,9 +12,10 @@ const Card = ({
             <p className='label'>{label}</p>
              <img src={image} alt={label} />
              <br/>
-             <ul className="ingr">{ingredientLines}</ul>
+            <div className='carret'> <AiFillCaretDown /> </div>
+             <ul className='ingr'>{ingredientLines}</ul>
              <br />
-             <a className="url" href={url} > {label}</a>
+             <a className='url' href={url} > {label}</a>
             <hr/>
         </div>
     )

@@ -9,13 +9,6 @@ html {
   html {
     font-size: 7px
   }
-  .site-header {
-    max-width:500px;
-    padding: 40px;
-    height: 100px;
-    text-align: center;
-    font-size: 0.8rem;
-  }
 }
  @media (min-width: 1400px) { 
   html {
@@ -38,10 +31,9 @@ small {
 }
 
 .container {
-  margin: 0 auto;
-  max-width:1200px;
   padding: 40px;
   background-color: white;
+  grid-area: main;
 }
 
 .title {
@@ -51,8 +43,8 @@ small {
 
 .form {
   display:grid;
-  margin: 0 auto;
   max-width: 900px;
+  margin: auto;
 
 }
 
@@ -97,13 +89,12 @@ small {
 .site-header {
   display: flex;
   flex-direction: row;
-  max-width:1200px;
   padding: 40px;
   background-color: rgba(0,0,0,0.85);
   color: white;
   font-size: 2rem;
-  margin: 0 auto;
   justify-content: center;
+  grid-area: header;
 
 }
 .site-header  > div {
@@ -113,14 +104,14 @@ small {
   cursor: pointer;
 }
 .site-footer {
-  max-width:1200px;
-  display: flex;
-  margin: 0 auto;
+  display: block;
+  width: 100%;
+  place-self: center;
   background-color: rgba(0,0,0,0.85);
   color: white;
+  grid-area: footer;
 }
 .site-footer > div {
-  width: 1200px;
   font-size: 3rem;
   text-align: center;
   text-transform: uppercase;
@@ -128,15 +119,17 @@ small {
 
 .card {
   align-items: center;
-  justify-self: center;
+  place-self: center;
   height: 50rem;
   display: flex;
   flex-direction: column;
-  width: 30rem;
-  border: 1px solid green;
+  width: 40rem;
+  border: 1px solid gold;
 }
 .card-container {
-  margin-top: 5rem;
+  margin-top: 3rem;
+  column-gap: 4rem;
+  row-gap: 3rem;
   display: grid;
   grid-template-columns: repeat( auto-fit, minmax(27rem, 1fr) );
 }
@@ -150,5 +143,13 @@ img {
 }
 
 .app {
-  min-height: 100%;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-areas: 
+                      'header'
+                      'main'
+                      'footer';
+  grid-template-rows: 10rem auto 5rem;
+  grid-template-columns: 100%;
 }
