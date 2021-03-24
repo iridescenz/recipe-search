@@ -15,9 +15,7 @@ html {
   footer.site-footer > div{
     font-size: 7px;
   }
-  .container {
-    height: 100vh;
-  }
+
   .app {
     width: 100vh;
     overflow-x:hidden;
@@ -101,6 +99,7 @@ small {
   
 .input {
   margin-bottom: 0;
+  padding-left: 6rem;
 }
 
 .site-header {
@@ -130,7 +129,7 @@ footer.site-footer {
   align-items: center;
   justify-content: center;
   grid-area: footer;
- min-height: 2rem;
+  min-height: 2rem;
   width:100%; 
 
 }
@@ -183,4 +182,11 @@ img {
   font-size: 3rem;
   cursor: pointer;
 
+}
+.icon {
+  font-size: 2rem;
+  font-weight: 900;
+  position: absolute;
+  margin-top: 4.6rem;
+  margin-left: 1.8rem;
 }
