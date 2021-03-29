@@ -4,9 +4,9 @@ import Footer from './Footer'
 
 export const NutritionFacts = () => {
     return (
-        <div>
+        <div className='main-component'>
             <Header />
-            <h1>this is nutrition facts</h1>
+            <div className='container'>this is nutrition facts</div>
             <Footer />
         </div>
     )

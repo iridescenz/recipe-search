@@ -4,9 +4,9 @@ import Footer from './Footer'
 
 export const LowcarbRecipes = () => {
     return (
-        <div>
+        <div className='main-component'>
             <Header />
-            <h1>this is low carb recipes</h1>
+            <div className='container'>this is low carb recipes</div>
             <Footer />
         </div>
     )

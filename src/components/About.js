@@ -4,9 +4,9 @@ import Footer from './Footer'
 
 export const About = () => {
     return (
-        <div>
+        <div className='main-component'>
             <Header />
-            <h1>This is sbout</h1>
+            <div className='container'>This is sbout</div>
             <Footer />
         </div>
     )
