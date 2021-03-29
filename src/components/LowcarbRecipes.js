@@ -4,9 +4,16 @@ import Footer from './Footer'
 
 export const LowcarbRecipes = () => {
     return (
-        <div className='main-component'>
+        <div className='main-component' >
             <Header />
-            <div className='container'>this is low carb recipes</div>
+            <div className='container' 
+                style={{backgroundImage: `url('lowcarb.jpeg')`,
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+                width: '100vw' }}>
+                this is low carb recipes
+            </div>
             <Footer />
         </div>
     )
