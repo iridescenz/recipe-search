@@ -1,9 +1,13 @@
 import React from 'react'
+import Header from './Header'
+import Footer from './Footer'
 
 export const About = () => {
     return (
         <div>
-            This is sbout
+            <Header />
+            <h1>This is sbout</h1>
+            <Footer />
         </div>
     )
 }

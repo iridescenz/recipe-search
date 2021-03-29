@@ -1,12 +1,13 @@
 import React from 'react'
 import Header from './Header'
+import Main from './Main'
 import Footer from './Footer'
 
-export const NutritionFacts = () => {
+export const RecipeSearchComponent = () => {
     return (
-        <div>
+        <div className="app">
             <Header />
-            <h1>this is nutrition facts</h1>
+            <Main />
             <Footer />
         </div>
     )
