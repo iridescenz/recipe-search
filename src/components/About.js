@@ -6,7 +6,14 @@ export const About = () => {
     return (
         <div className='main-component'>
             <Header />
-            <div className='container'>This is sbout</div>
+            <div className='container'
+                style={{
+                    backgroundImage: `url('about.jpeg')`,
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                    width: '100%' }} 
+            >This is sbout</div>
             <Footer />
         </div>
     )

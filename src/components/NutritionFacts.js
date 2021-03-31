@@ -4,10 +4,17 @@ import Footer from './Footer'
 
 export const NutritionFacts = () => {
     return (
-        <div className='main-component'>
+        <div className='main-component' >
             <Header />
-            <script src="https://platform.fatsecret.com/js?key=XXXXX&theme=green"></script>
-            <div className='container'>this is nutrition facts</div>
+            <div className='container'
+                style={{
+                    backgroundImage: `url('nutrition.jpg')`,
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                    width: '100vw' }}
+            >
+            this is nutrition facts</div>
             <Footer />
         </div>
     )
