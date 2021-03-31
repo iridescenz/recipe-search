@@ -7,7 +7,7 @@ export const LowcarbRecipes = () => {
         <div className='main-component' >
             <Header />
             <div className='container' 
-                style={{backgroundImage: `url('lowcarb.jpeg')`,
+                style={{backgroundImage: `url('keto.jpg')`,
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',

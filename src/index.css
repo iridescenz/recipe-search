@@ -17,12 +17,13 @@ html {
     font-size: 7px;
   }
   .form {
-   width: 60vh;
+   width: 80vw;
+   margin: auto;
   }
   .app {
     width: 100vh;
     height: 100vh;
-    overflow-x:hidden;
+
   }
 }
  @media (min-width: 1400px) { 
@@ -105,7 +106,7 @@ small {
   padding-left: 6rem;
 }
 
-.site-header {
+div.site-header {
   display: flex;
   flex-direction: row;
   background-color: rgb(255, 255, 255);
@@ -114,7 +115,7 @@ small {
   align-items: center;
   justify-content: center;
   grid-area: header;
-  min-height: 15vh;
+  min-height: auto;
 
 }
 .site-header  > div {
@@ -191,6 +192,7 @@ img {
   display: flex;
   flex-direction: column;
   place-items: center;
+  z-index: 2;
 }
 .caret > div{
   font-size: 1rem;
