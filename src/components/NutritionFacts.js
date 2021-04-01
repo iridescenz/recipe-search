@@ -10,14 +10,14 @@ export const NutritionFacts = () => {
     const [nutritionData, setNutritionData] = useState('')
     const searchNutrition = (e) => {
         e.preventDefault();
-        const apiId = `ec4f9e290ce094b4adcf78bbfd65062e`;
-        const apiKey = `d3f05ade`;
-        const res = axios.get(`https://api.edamam.com/api/food-database/v2/parser?ingr=${product}?app_id=${apiId}&app_key=${apiKey}`)
+        const apiKey = `ec4f9e290ce094b4adcf78bbfd65062e`;
+        const apiId = `d3f05ade`;
+        const res = axios.get(`https://api.edamam.com/api/nutrition-data?app_id=${apiId}&app_key=${apiKey}&ingr=${product}`)
         .then(res => setNutritionData(res))
         .catch(er => console.log(er))
         setProduct('')
-        console.log(res)
     }
+    console.log(nutritionData)
     return (
         <div className='main-component' >
             <Header />

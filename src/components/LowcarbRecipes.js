@@ -15,6 +15,7 @@ export const LowcarbRecipes = () => {
                     width: '100vw' }} 
             >
                 this is low carb recipes
+                {/* 'https://api.edamam.com/search?q=&app_id=YOURAPP_ID&app_key=YOURAPP_KEY&diet=low-carb' or this 'https://api.edamam.com/search?q=&app_id=YOURAPP_ID&app_key=YOURAPP_KEY &nutrients[CA]=50%2B' */}
             </div>
             <Footer />
         </div>
