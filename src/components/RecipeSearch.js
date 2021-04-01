@@ -5,7 +5,7 @@ import { GoSearch } from "react-icons/go"
 
 const RecipeSearch = () => {
     const [query, setQuery] = useState('');
-    let [data, setData] = useState('');
+    const [data, setData] = useState('');
     const searchRecipe =  (e) => {
         e.preventDefault();
         const apiId = `a6975102&app_key=3e6a54f8480af0f1dfb6d7dc3c5cb3cd`
@@ -14,6 +14,7 @@ const RecipeSearch = () => {
         .catch(er => console.log(er))
         setQuery('')
     }
+    data && console.log(data)
     const showList = data.count  
     ? data.hits.map(el => el.recipe).map((el, i) => 
         <Card key={i} 

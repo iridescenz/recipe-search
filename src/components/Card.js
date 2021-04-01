@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { BsCaretDown } from 'react-icons/bs';
+import { BsChevronDoubleDown } from 'react-icons/bs';
+import { BsChevronDoubleUp } from 'react-icons/bs';
+
 
 const Card = ({
     label,
@@ -13,9 +15,9 @@ const Card = ({
             <a href={url} className='label'>{label}</a>
              <img src={image} alt={label} />
              <br/>
-            <div className='caret' onClick={() => { setShowIngr(!showIngr)}}> <div>Show ingredients</div><BsCaretDown /> </div>
+            <div className='caret' onClick={() => { setShowIngr(!showIngr)}}> 
+            {!showIngr ? (<><div>Show ingredients</div> <BsChevronDoubleDown /> </>): <BsChevronDoubleUp />} </div>
             {showIngr && <ul className='ingr'>{ingredientLines}</ul>}
-            <hr/>
         </div>
     )
 }
