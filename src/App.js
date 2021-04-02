@@ -11,11 +11,11 @@ const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path='/' exact component={RecipeSearchComponent} />
+        <Route path='/' exact component={Home} />
         <Route path='/about' exact component={About} />
         <Route path='/low-carb-recipes' exact component={LowcarbRecipes} />
         <Route path='/nutrition-facts' exact component={NutritionFacts} />
-        <Route path='/home' exact component={Home} />
+        <Route path='/recipe-search' exact component={RecipeSearchComponent} />
         <Route path='/' render={() => <h1>404</h1>} />
       </Switch>
     </BrowserRouter>

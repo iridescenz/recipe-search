@@ -3,6 +3,7 @@ import Card from "./Card"
 import axios from "axios"
 import { GoSearch } from "react-icons/go"
 
+
 const RecipeSearch = () => {
     const [query, setQuery] = useState('');
     const [data, setData] = useState('');

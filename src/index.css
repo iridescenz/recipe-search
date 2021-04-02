@@ -28,13 +28,20 @@ html {
 }
  @media (min-width: 1400px) { 
   html {
-    font-size: 15px;
+    font-size: 13px;
   }
   .app {
     height: 100vh;
   }
  }
-
+ @media (min-width: 1300px) { 
+  html {
+    font-size: 11px;
+  }
+  .app {
+    height: 100vh;
+  }
+ }
 body {
   margin: 0;
   padding: 0;
