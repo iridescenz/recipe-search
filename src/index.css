@@ -56,16 +56,18 @@ p {
   font-size: 1.6rem;
 }
 
-small {
-  font-size: 1.2rem;
-}
 
 .container {
   background-color: rgb(255, 244, 230);;
   grid-area: main;
   min-height: 77vh;
 }
-
+.container  {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+}
 .title {
   font-size: 4.4rem;
   text-align: center
@@ -249,13 +251,17 @@ img.food {
 }
 
 div.error {
-  height: 100%;
   margin: auto;
   display: grid;
   color:rgb(101, 148, 123);
   place-content: center;
   font-family: 'Nunito Sans', sans-serif;
   font-size: 2rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
 }
 
 .error > div:last-child {

@@ -9,12 +9,12 @@ const Card = ({
     image,
     url
 }) => { 
-      const [showIngr, setShowIngr] = useState(false);
+    const [showIngr, setShowIngr] = useState(false);
     return (
         <div className='card'>
             <a href={url} className='label'>{label}</a>
-             <img src={image} alt={label} />
-             <br/>
+            <img src={image} alt={label} />
+            <br/>
             <div className='caret' onClick={() => { setShowIngr(!showIngr)}}> 
             {!showIngr ? (<><div>Show ingredients</div> <BsChevronDoubleDown /> </>): <BsChevronDoubleUp />} </div>
             {showIngr && <ul className='ingr'>{ingredientLines}</ul>}

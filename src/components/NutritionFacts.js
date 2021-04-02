@@ -5,14 +5,6 @@ import NutritionCard from './NutritionCard'
 import axios from 'axios'
 import { GoSearch } from 'react-icons/go'
 
-
-const backgroungImage = {
-    backgroundImage: `url('nutrition.jpg')`,
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    width: '100vw' }
-
 export const NutritionFacts = () => {
     const [product, setProduct] = useState('');
     const [nutritionData, setNutritionData] = useState('')
@@ -32,20 +24,18 @@ export const NutritionFacts = () => {
     return (
         <div className='main-component' >
             <Header />
-            <div className='container'
-                style={backgroungImage}
-            >
-        <form className="form" onSubmit={searchNutrition}>
-            <label className="label" htmlFor="query">search for a product</label>
-            <div className="icon"> <GoSearch /></div>
-                <input className="input" 
-                    type="text" 
-                    name="query"
-                    value={product}
-                    onChange={(e) => setProduct(e.target.value)}
-                    placeholder="Search..."/>
-                <button className="button" type="submit">Search</button>
-        </form>
+            <div className='container' style={{backgroundImage: `url('nutrition.jpg')`}}>
+            <form className='form' onSubmit={searchNutrition}>
+                <label className='label' htmlFor='query'>search for a product</label>
+                <div className='icon'> <GoSearch /></div>
+                    <input className='input' 
+                        type='text' 
+                        name='query'
+                        value={product}
+                        onChange={(e) => setProduct(e.target.value)}
+                        placeholder='Search...'/>
+                    <button className='button' type='submit'>Search</button>
+            </form>
            </div>
             <Footer />
         </div>

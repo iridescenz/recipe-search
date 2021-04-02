@@ -6,7 +6,7 @@ import Footer from './Footer'
 
 export const RecipeSearchComponent = () => {
     return (
-        <div className="app">
+        <div className='app'>
             <Header />
             <Main />
             <Footer />

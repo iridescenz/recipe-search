@@ -1,7 +1,7 @@
-import React, { useState} from "react";
-import Card from "./Card"
-import axios from "axios"
-import { GoSearch } from "react-icons/go"
+import React, { useState} from 'react';
+import Card from './Card'
+import axios from 'axios'
+import { GoSearch } from 'react-icons/go'
 
 
 const RecipeSearch = () => {
@@ -28,18 +28,18 @@ const RecipeSearch = () => {
     
     return (
         <>
-        <form className="form" onSubmit={searchRecipe}>
-            <label className="label" htmlFor="query">search for a recipe</label>
-            <div className="icon"> <GoSearch /></div>
-                <input className="input" 
-                    type="text" 
-                    name="query"
+        <form className='form' onSubmit={searchRecipe}>
+            <label className='label' htmlFor='query'>search for a recipe</label>
+            <div className='icon'> <GoSearch /></div>
+                <input className='input' 
+                    type='text'
+                    name='query'
                     value={query}
                     onChange={(e) => {setQuery(e.target.value)}}
-                    placeholder="Search..."/>
-                <button className="button" type="submit">Search</button>
+                    placeholder='Search...'/>
+                <button className='button' type='submit'>Search</button>
         </form>
-      <div className="card-container">{showList}</div>
+      <div className='card-container'>{showList}</div>
         </>
     )
 }
