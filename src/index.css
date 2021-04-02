@@ -6,6 +6,9 @@ html {
 }
 
 @media (max-width: 500px) { 
+  html {
+    font-size: 7px;
+  }
   .card {
     font-size: 10px
   }
@@ -233,4 +236,38 @@ img {
 img.food {
   margin: 0 auto;
   size: 80vh;
+}
+
+.error > .error404 {
+  color: rgb(184, 36, 36);
+  font-size: 15rem;
+  margin: 0 auto;
+  font-family: 'Train One', cursive;
+  padding-bottom: 2rem;
+  font-weight: 600;
+  margin-bottom: -5rem;
+}
+
+div.error {
+  height: 100%;
+  margin: auto;
+  display: grid;
+  color:rgb(101, 148, 123);
+  place-content: center;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 2rem;
+}
+
+.error > div:last-child {
+  justify-self: center;
+  height: 5rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.error> div:last-child:hover {
+  font-weight: 900;
+  font-size: 2.2rem;
+  color: rgb(119, 172, 134);
 }
