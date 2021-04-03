@@ -15,7 +15,6 @@ const RecipeSearch = () => {
         .catch(er => console.log(er))
         setQuery('')
     }
-    data && console.log(data)
     const showList = data.count  
     ? data.hits.map(el => el.recipe).map((el, i) => 
         <Card key={i} 

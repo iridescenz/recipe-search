@@ -4,9 +4,7 @@ import RecipeSearch from './RecipeSearch'
 
 const Main = () => {
   return (
-      <div className="container" 
-        style={{backgroundImage: `url('food.jpeg')`}}
-      >
+      <div className="container" style={{backgroundImage: `url('food.jpeg')`}}>
         <RecipeSearch />
     </div>
   )

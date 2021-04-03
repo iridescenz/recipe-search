@@ -10,7 +10,6 @@ export const NutritionFacts = () => {
     const [nutritionData, setNutritionData] = useState('')
     const searchNutrition = (e) => {
         e.preventDefault();
-        console.log(product)
         const apiKey = `ec4f9e290ce094b4adcf78bbfd65062e`;
         const apiId = `d3f05ade`;
         const res = axios.get(`https://api.edamam.com/api/nutrition-data?app_id=${apiId}&app_key=${apiKey}&ingr=${encodeURIComponent(product)}`)
@@ -20,7 +19,15 @@ export const NutritionFacts = () => {
     }
     
      console.log(nutritionData)
-  {/* nutritionalData ? */}
+  {/* const productNutrition = nutritionata.count  
+    ? data.hits.map(el => el.recipe).map((el, i) => 
+        <Card key={i} 
+        label={el.label}
+        url={el.url} 
+        image={el.image}
+        ingredientLines={el.ingredientLines.map((el, i) => <li key={i} >{el}</li>)}
+        />) 
+        : data.count === 0 ? <h1> No results found</h1> : '' */}
     return (
         <div className='main-component' >
             <Header />
