@@ -16,7 +16,7 @@ const Card = ({
             <img src={image} alt={label} />
             <br/>
             <div className='caret' onClick={() => { setShowIngr(!showIngr)}}> 
-            {!showIngr ? (<><div>Show ingredients</div> <BsChevronDoubleDown /> </>): <BsChevronDoubleUp />} </div>
+            {!showIngr ? (<><div></div> <BsChevronDoubleDown /> </>): <BsChevronDoubleUp />} </div>
             {showIngr && <ul className='ingr'>{ingredientLines}</ul>}
         </div>
     )
