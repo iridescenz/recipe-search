@@ -183,7 +183,7 @@ footer.site-footer > div {
   padding-left: 1rem;
   padding-right: 1rem;
   display: grid;
-  background-color: rgb(244, 242, 242);
+  background-color: rgb(226, 240, 245);
   grid-template-columns: repeat( auto-fit, minmax(30rem, 1fr) );
 }
 .ingr {
