@@ -1,6 +1,5 @@
 import React from 'react'
-
-export const NutritionCard = (
+ const NutritionCard = (
     label,
     weight,
     calories,
@@ -8,7 +7,11 @@ export const NutritionCard = (
 ) => {
     return (
         <div className='card'>
-            
+        <p>{label}</p> 
+        <span>{calories}</span>
+        <span>{weight}</span>
+        <div>{nutrients}</div>
         </div>
     )
 }
+ export default NutritionCard

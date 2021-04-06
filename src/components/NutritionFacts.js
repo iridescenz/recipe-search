@@ -5,9 +5,10 @@ import NutritionCard from './NutritionCard'
 import axios from 'axios'
 import { GoSearch } from 'react-icons/go'
 
+
 export const NutritionFacts = () => {
-    const [product, setProduct] = useState('1%oz%pasta');
-    const [nutritionData, setNutritionData] = useState({})
+    const [product, setProduct] = useState('');
+    const [nutritionData, setNutritionData] = useState('')
     const searchNutrition = (e) => {
         e.preventDefault();
         const apiKey = `ec4f9e290ce094b4adcf78bbfd65062e`;
@@ -15,18 +16,11 @@ export const NutritionFacts = () => {
         const res = axios.get(`https://api.edamam.com/api/nutrition-data?app_id=${apiId}&app_key=${apiKey}&ingr=${encodeURIComponent(product)}`)
         .then(res => setNutritionData(res.data))
         .catch(er => console.log(er))
+        setProduct('')
     }
-       nutritionData && console.log(nutritionData)
-  {/* const productNutritionFacts = nutritionData.totalWeight !== 0  
-    ?  const {totalDaily, totalNutriens, totalWeight, totalNutrientsKCal} = nutritionData;
-        <nutritionCard key={totalWeight + calories} 
-        label={product}
-        weight={totalWeigth}
-        calories={totalNutrientsKCal}
-        nutrients={}
-        />) 
-        setProduct('');
-        : data.totalWeight === 0 ? <h1> No results found</h1> : '' */}
+
+const nutrients = nutritionData && Object.entries(nutritionData.totalNutrients).map(el => Object.entries(el)).map(el =>{
+     const {label, quantity, unit} = el[1][1]; console.log(label, quantity.toFixed(2), unit)})
     return (
         <div className='main-component' >
             <Header />
@@ -42,6 +36,7 @@ export const NutritionFacts = () => {
                         placeholder='Search...'/>
                     <button className='button' type='submit'>Search</button>
             </form>
+            <div>{nutrients}</div>
            </div>
             <Footer />
         </div>
