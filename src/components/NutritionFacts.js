@@ -6,7 +6,7 @@ import axios from 'axios'
 import { GoSearch } from 'react-icons/go'
 
 export const NutritionFacts = () => {
-    const [product, setProduct] = useState('');
+    const [product, setProduct] = useState('1%oz%pasta');
     const [nutritionData, setNutritionData] = useState('')
     const searchNutrition = (e) => {
         e.preventDefault();
@@ -15,19 +15,18 @@ export const NutritionFacts = () => {
         const res = axios.get(`https://api.edamam.com/api/nutrition-data?app_id=${apiId}&app_key=${apiKey}&ingr=${encodeURIComponent(product)}`)
         .then(res => setNutritionData(res.data))
         .catch(er => console.log(er))
-        setProduct('')
+        setProduct('');
     }
-    
-     console.log(nutritionData)
-  {/* const productNutrition = nutritionata.count  
-    ? data.hits.map(el => el.recipe).map((el, i) => 
-        <Card key={i} 
+       nutritionData && console.log(nutritionData)
+  {/* const productNutritionFacts = nutritionData.totalWeight !== 0  
+    ?  const {totalDaily, totalNutriens, totalWeight, totalNutrientsKCal} = nutritionData;
+        <nutritionCard key={i} 
         label={el.label}
         url={el.url} 
         image={el.image}
         ingredientLines={el.ingredientLines.map((el, i) => <li key={i} >{el}</li>)}
         />) 
-        : data.count === 0 ? <h1> No results found</h1> : '' */}
+        : data.totalWeight === 0 ? <h1> No results found</h1> : '' */}
     return (
         <div className='main-component' >
             <Header />
