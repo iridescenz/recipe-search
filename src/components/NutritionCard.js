@@ -1,10 +1,13 @@
 import React from 'react'
 
 export const NutritionCard = (
-    
+    label,
+    weight,
+    calories,
+    nutrients
 ) => {
     return (
-        <div>
+        <div className='card'>
             
         </div>
     )
