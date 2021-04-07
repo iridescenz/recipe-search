@@ -38,7 +38,7 @@ const RecipeSearch = () => {
                     placeholder='Search...'/>
                 <button className='button' type='submit'>Search</button>
         </form>
-      <div className='card-container'>{showList}</div>
+        <div className='card-container'>{showList}</div>
         </>
     )
 }

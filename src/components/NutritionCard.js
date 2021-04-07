@@ -1,16 +1,16 @@
 import React from 'react'
- const NutritionCard = (
+ const NutritionCard = ({
     label,
     weight,
     calories,
     nutrients
-) => {
+ }) => {
     return (
-        <div className='card'>
+        <div className='nutrition-card'>
         <p>{label}</p> 
-        <span>{calories}</span>
-        <span>{weight}</span>
-        <div>{nutrients}</div>
+        <div>{calories}</div>
+        <div>{weight}</div>
+        <ul>{nutrients}</ul>
         </div>
     )
 }

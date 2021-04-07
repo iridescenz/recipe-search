@@ -13,14 +13,17 @@ export const NutritionFacts = () => {
         e.preventDefault();
         const apiKey = `ec4f9e290ce094b4adcf78bbfd65062e`;
         const apiId = `d3f05ade`;
-        const res = axios.get(`https://api.edamam.com/api/nutrition-data?app_id=${apiId}&app_key=${apiKey}&ingr=${encodeURIComponent(product)}`)
+        const res = axios.get(`https://api.edamam.com/api/nutrition-data?app_id=${apiId}&app_key=${apiKey}&ingr=${encodeURIComponent(product)}&img=yes`)
         .then(res => setNutritionData(res.data))
         .catch(er => console.log(er))
         setProduct('')
     }
-
-const nutrients = nutritionData && Object.entries(nutritionData.totalNutrients).map(el => Object.entries(el)).map(el =>{
-     const {label, quantity, unit} = el[1][1]; console.log(label, quantity.toFixed(2), unit)})
+console.log(nutritionData)
+    const nutrients = nutritionData && Object.entries(nutritionData.totalNutrients).map(el => Object.entries(el)).map((el, i) =>{
+        const {label, quantity, unit} = el[1][1]; 
+        return <li key={i + Date.now()}> {`${label}: ${quantity.toFixed(2)} ${unit}`} </li>})
+    const { totalWeight } = nutritionData;
+ 
     return (
         <div className='main-component' >
             <Header />
@@ -36,7 +39,10 @@ const nutrients = nutritionData && Object.entries(nutritionData.totalNutrients).
                         placeholder='Search...'/>
                     <button className='button' type='submit'>Search</button>
             </form>
-            <div>{nutrients}</div>
+            <div>
+                <NutritionCard nutrients={nutrients} 
+                                weight={  nutritionData && `Total weight: ${totalWeight.toFixed(0)} gram`} />
+            </div>
            </div>
             <Footer />
         </div>
