@@ -50,7 +50,7 @@ console.log(nutritionData)
             </form>
             <div>
                 {totalWeight === undefined && ''} 
-                {totalWeight === 0  &&  <div className='noresult'> <div >{`No result found for ${productName}`}</div> </div>}
+                {totalWeight === 0  &&  <div className='noresult'> <div >{`No results found for ${productName}`}</div> </div>}
                 {totalWeight !== 0 && totalWeight !== undefined && <NutritionCard label={productName}
                                 nutrients={nutrients} 
                                 weight={`Total weight: ${totalWeight.toFixed(0)} gram`} /> }
