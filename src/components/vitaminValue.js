@@ -2,7 +2,6 @@ const dailyRecomendationValues = [
     {name: 'Energy', value: 2000 },
     {name: 'Fat', value: 50},
     {name: 'Saturated', value: 20},
-    {name: 'Protein', value: 70},
     {name: 'Trans', value: 2}, 
     {name: 'Monounsaturated', value: 15},
     {name: 'Polyunsaturated', value: 22},
