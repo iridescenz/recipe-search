@@ -49,9 +49,12 @@ console.log(nutritionData)
                     <button className='button' type='submit'>Search</button>
             </form>
             <div>
-                {nutritionData && <NutritionCard label={productName}
+                {totalWeight === undefined && ''} 
+                {totalWeight === 0  &&  <div className='noresult'> <div >{`No result found for ${productName}`}</div> </div>}
+                {totalWeight !== 0 && totalWeight !== undefined && <NutritionCard label={productName}
                                 nutrients={nutrients} 
-                                weight={`Total weight: ${totalWeight.toFixed(0)} gram`} />}
+                                weight={`Total weight: ${totalWeight.toFixed(0)} gram`} /> }
+                
             </div>
            </div>
             <Footer />
