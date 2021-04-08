@@ -24,7 +24,13 @@ export const NutritionFacts = () => {
 console.log(nutritionData)
     const nutrients = nutritionData && Object.entries(nutritionData.totalNutrients).map(el => Object.entries(el)).map((el, i) =>{
         const {label, quantity, unit} = el[1][1]; 
-        return <li key={i + Date.now()}> {`${label}: ${quantity.toFixed(0)} ${unit} ${dailyRecomendationValues.map(el => el.name === label && ((quantity / el.value) * 100).toFixed(1)).filter(el => el !==false)} % from daily recommended value`} </li>})
+        return <li key={i + Date.now()}> 
+        {`${label}: ${quantity.toFixed(2)} ${unit} 
+        ${dailyRecomendationValues
+        .map(el => el.name === label && ((quantity / el.value) * 100)
+        .toFixed(1))
+        .filter(el => el !==false)} % DV` }
+        </li>})
     const { totalWeight } = nutritionData;
  
     return (
