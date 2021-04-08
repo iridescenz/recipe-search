@@ -6,7 +6,7 @@ import axios from 'axios'
 import { GoSearch } from 'react-icons/go'
 import dailyRecomendationValues from './vitaminValue'
 
-console.log(dailyRecomendationValues)
+
 export const NutritionFacts = () => {
     const [product, setProduct] = useState('');
     const [productName, setProductName] = useState('');
@@ -21,15 +21,14 @@ export const NutritionFacts = () => {
         .catch(er => console.log(er))
         setProduct('');
     }
-console.log(nutritionData)
     const nutrients = nutritionData && Object.entries(nutritionData.totalNutrients).map(el => Object.entries(el)).map((el, i) =>{
         const {label, quantity, unit} = el[1][1]; 
+        const nutrientValue = dailyRecomendationValues
+                              .filter(el => el.name === label)
+                              .map(el => ((quantity / el.value) * 100))
+                              .map(el => el.toFixed(0))
         return <li key={i + Date.now()}> 
-        {`${label}: ${quantity.toFixed(2)} ${unit} 
-        ${dailyRecomendationValues
-        .map(el => el.name === label && ((quantity / el.value) * 100)
-        .toFixed(1))
-        .filter(el => el !==false)} % DV` }
+            {`${label}: ${quantity.toFixed(2)} ${unit} - ${nutrientValue} % DV`}
         </li>})
     const { totalWeight } = nutritionData;
  
