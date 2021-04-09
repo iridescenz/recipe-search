@@ -5,7 +5,7 @@ import NutritionCard from './NutritionCard'
 import axios from 'axios'
 import { GoSearch } from 'react-icons/go'
 import dailyRecomendationValues from './vitaminValue'
-
+import Form from './Form'
 
 export const NutritionFacts = () => {
     const [product, setProduct] = useState('');
@@ -36,26 +36,20 @@ export const NutritionFacts = () => {
         <div className='main-component' >
             <Header />
             <div className='container' style={{backgroundImage: `url('nutrition.jpg')`}}>
-            <form className='form' onSubmit={searchNutrition}>
-                <label className='label' htmlFor='query'>search for a product</label>
-                <div className='icon'> <GoSearch /></div>
-                    <input className='input' 
-                        type='text' 
-                        name='query'
-                        value={product}
-                        onChange={(e) => setProduct(e.target.value)}
-                        placeholder='Search...'/>
-                    <button className='button' type='submit'>Search</button>
-            </form>
-            <div>
+                <Form 
+                    handleSubmit={searchNutrition}
+                    handleChange={e => setProduct(e.target.value)}
+                    value={product}
+                    name='product'
+                />
                 {totalWeight === undefined && ''} 
                 {totalWeight === 0  &&  <div className='noresult'> <div >{`No results found for ${productName}`}</div> </div>}
-                {totalWeight !== 0 && totalWeight !== undefined && <NutritionCard label={productName}
-                                nutrients={nutrients} 
-                                weight={`Total weight: ${totalWeight.toFixed(0)} gram`} /> }
-                
+                {totalWeight !== 0 && totalWeight !== undefined 
+                    && <NutritionCard 
+                        label={productName}
+                        nutrients={nutrients} 
+                        weight={`Total weight: ${totalWeight.toFixed(0)} gram`} /> }
             </div>
-           </div>
             <Footer />
         </div>
     )
