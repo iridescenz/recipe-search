@@ -26,7 +26,7 @@ const RecipeSearch = () => {
         : data.count === 0 ? <div className='noresult'><div>No results found </div></div> : ''
     
     return (
-        <>
+        <div className="container" style={showList ? {background: 'rgb(226, 240, 245)'}:{backgroundImage: `url('food.jpeg')`}}>
         <Form 
             handleSubmit={searchRecipe}
             handleChange={e => setQuery(e.target.value)}
@@ -34,7 +34,7 @@ const RecipeSearch = () => {
             name='recipe'
         />
         <div className='card-container'>{showList}</div>
-        </>
+        </div>
     )
 }
 export default RecipeSearch
