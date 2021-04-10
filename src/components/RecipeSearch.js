@@ -2,6 +2,7 @@ import React, { useState} from 'react';
 import Card from './Card'
 import axios from 'axios'
 import Form from './Form'
+import Pagination from './Pagination'
 
 
 const RecipeSearch = () => {
@@ -15,6 +16,9 @@ const RecipeSearch = () => {
         .catch(er => console.log(er))
         setQuery('')
     }
+
+
+
     const showList = data.count  
     ? data.hits.map(el => el.recipe).map((el, i) => 
         <Card key={i} 
@@ -34,6 +38,7 @@ const RecipeSearch = () => {
             name='recipe'
         />
         <div className='card-container'>{showList}</div>
+        {showList && <Pagination />}
         </div>
     )
 }

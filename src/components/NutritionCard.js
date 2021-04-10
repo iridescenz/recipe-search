@@ -3,7 +3,8 @@ import React from 'react'
     label,
     weight,
     calories,
-    nutrients
+    nutrients,
+    img
  }) => {
     return (
         <div className='nutrition-card'>
