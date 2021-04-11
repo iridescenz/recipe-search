@@ -28,10 +28,9 @@ export const NutritionFacts = () => {
                               .map(el => ((quantity / el.value) * 100))
                               .map(el => el.toFixed(0))
         return <li key={i + Date.now()}> 
-            {`${label}: ${quantity.toFixed(2)} ${unit} - ${nutrientValue} % DV`}
+            {`${label}: ${quantity.toFixed(2)} ${unit}`} <br />  {`${nutrientValue}% DV`}
         </li>})
     const { totalWeight, uri } = nutritionData;
-    console.log(nutritionData)
  
     return (
         <div className='main-component' >

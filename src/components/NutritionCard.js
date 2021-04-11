@@ -4,14 +4,13 @@ import React from 'react'
     weight,
     calories,
     nutrients,
-    img
  }) => {
     return (
         <div className='nutrition-card'>
-        <p>{label}</p> 
+        <p>Nutrition facts for: {label}</p> 
         <div>{calories}</div>
         <div>{weight}</div>
-        <ul>{nutrients}</ul>
+        <ul>{nutrients} </ul>
         </div>
     )
 }
