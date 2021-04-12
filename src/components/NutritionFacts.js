@@ -3,9 +3,47 @@ import Header from './Header'
 import Footer from './Footer'
 import NutritionCard from './NutritionCard'
 import axios from 'axios'
-import { GoSearch } from 'react-icons/go'
 import dailyRecomendationValues from './vitaminValue'
 import Form from './Form'
+import PropTypes from 'prop-types';
+import { makeStyles } from '@material-ui/core/styles';
+import LinearProgress from '@material-ui/core/LinearProgress';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+
+function LinearProgressWithLabel(props) {
+    return (
+      <Box display="flex" alignItems="center">
+        <Box width="90%" mr={1}>
+          <LinearProgress variant="determinate" {...props} />
+        </Box>
+        <Box minWidth={10}>
+          <Typography variant="body2" color="textSecondary">{`${Math.round(
+            props.value,
+          )}%`}</Typography>
+        </Box>
+      </Box>
+    );
+  }
+  
+  LinearProgressWithLabel.propTypes = {
+    value: PropTypes.number.isRequired,
+  };
+  
+  const useStyles = makeStyles({
+    root: {
+      width: '200%',
+    },
+  });
+  
+  export default function LinearWithValueLabel() {
+    const classes = useStyles();
+    return (
+      <div className={classes.root}>
+        <LinearProgressWithLabel value={100} />
+      </div>
+    );
+  }
 
 export const NutritionFacts = () => {
     const [product, setProduct] = useState('');
@@ -28,7 +66,7 @@ export const NutritionFacts = () => {
                               .map(el => ((quantity / el.value) * 100))
                               .map(el => el.toFixed(0))
         return <li key={i + Date.now()}> 
-            {`${label}: ${quantity.toFixed(2)} ${unit}`} <br />  {`${nutrientValue}% DV`}
+            {`${label}: ${quantity.toFixed(2)} ${unit}`} <br /> <LinearProgressWithLabel value={nutrientValue} tooltip={`${nutrientValue} % from DV`}/>
         </li>})
     const { totalWeight, uri } = nutritionData;
  
