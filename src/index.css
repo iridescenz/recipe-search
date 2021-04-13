@@ -12,6 +12,13 @@ html {
   .card {
     font-size: 10px
   }
+  .nutrition-card > ul { 
+    grid-template-columns: repeat(3, minmax(10rem, 1fr) )!important;
+  }
+  .nutrition-card {
+    font-size: 9px!important;
+    margin: 1rem auto!important;
+  }
   .site-header > div {
     font-size: 10px;
   }
@@ -20,7 +27,7 @@ html {
     font-size: 7px;
   }
   .form {
-   width: 80vw;
+   width: 100%;
    margin: auto;
   }
   .app {
@@ -149,19 +156,14 @@ div.site-header {
 
 footer.site-footer {
   display: flex;
-  flex-direction: row;
+  justify-content:space-evenly;
   background-color: rgba(34, 34, 34);
   color: rgb(255, 244, 230);
   font-size: 2rem;
   align-items: center;
-  justify-content: center;
   grid-area: footer;
   min-height: 10vh;
   width:100%; 
-
-}
-footer.site-footer > div {
-  text-transform: uppercase;
 }
 
 .card {
@@ -288,7 +290,7 @@ div.error {
   flex-direction: column;
   align-items: center;
   place-self: center;
-  margin: 3rem auto;
+  margin: 2rem auto;
   height: auto;
   width: 65vw;
   padding: 3rem;
@@ -326,7 +328,7 @@ div.error {
 .nutrition-card > ul {
   display: grid;
   align-items: center;
-  grid-template-columns: repeat( 3, minmax(10rem, 1fr) );
+  grid-template-columns: repeat( 4, minmax(10rem, 1fr) );
   column-gap: 3rem;
   row-gap: 3rem;
   padding: 1rem;
@@ -336,4 +338,8 @@ div.error {
   display: table-cell;
   text-align: center;
   vertical-align: center;
+}
+.site-footer > a {
+  color: white;
+  font-size: 2rem;
 }

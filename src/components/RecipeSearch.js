@@ -35,6 +35,7 @@ const RecipeSearch = () => {
             handleSubmit={searchRecipe}
             handleChange={e => setQuery(e.target.value)}
             value={query}
+            placeholder={`e.g. apple pie`}
             name='recipe'
         />
         <div className='card-container'>{showList}</div>

@@ -33,6 +33,7 @@ export const LowcarbRecipes = () => {
                     handleSubmit={searchLowCarbRecipe}
                     handleChange={e => setQuery(e.target.value)}
                     value={query}
+                    placeholder={`e.g. keto waffles`}
                     name='low carb recipe'
                 />
             <div className='card-container'>{showLowCarbList}</div>

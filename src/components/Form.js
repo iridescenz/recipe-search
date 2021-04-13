@@ -1,7 +1,7 @@
 import React from 'react'
 import { GoSearch } from 'react-icons/go'
 
-const Form = ({ handleSubmit, name, handleChange, value }) => {
+const Form = ({ handleSubmit, name, handleChange, value, placeholder }) => {
     return (
         <form className='form' onSubmit={handleSubmit}>
             <label className='label' htmlFor='query'>search for a {name}</label>
@@ -11,7 +11,7 @@ const Form = ({ handleSubmit, name, handleChange, value }) => {
                     name='query'
                     value={value}
                     onChange={handleChange}
-                    placeholder='Search...'/>
+                    placeholder={placeholder}/>
                 <button className='button' type='submit'>Search</button>
         </form>
     )

@@ -32,7 +32,7 @@ function LinearProgressWithLabel(props) {
   
   const useStyles = makeStyles({
     root: {
-      width: '200%',
+      width: '100%',
     },
   });
   
@@ -76,6 +76,7 @@ export const NutritionFacts = () => {
             <div className='container' style={{backgroundImage: `url('nutrition.jpg')`}}>
                 <Form 
                     handleSubmit={searchNutrition}
+                    placeholder={`e.g. 100 gram chicken liver/ 1 big apple/ 3 oz peanuts`}
                     handleChange={e => setProduct(e.target.value)}
                     value={product}
                     name='product'
