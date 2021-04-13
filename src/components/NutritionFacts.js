@@ -47,7 +47,7 @@ export const NutritionFacts = () => {
                               .filter(el => el.name === label)
                               .map(el => ((quantity / el.value) * 100))
         return <li key={i + Date.now()}> 
-            {`${label}: ${quantity.toFixed(2)} ${unit}`} <br /> <LinearProgressWithLabel value={nutrientValue} className={nutrientValue > 100 && `MuiLinearProgress-barColorPrimary`}/>
+            {`${label}: ${quantity.toFixed(1)} ${unit}`} <br /> <LinearProgressWithLabel value={nutrientValue} className={nutrientValue > 100 && `MuiLinearProgress-barColorPrimary`}/>
         </li>})
     const { totalWeight, uri } = nutritionData;
  

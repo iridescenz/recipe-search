@@ -332,7 +332,7 @@ div.error {
   padding: 1rem;
 }
 
-  li {
+  ul.nutrition > li {
   display: table-cell;
   text-align: center;
   vertical-align: center;
