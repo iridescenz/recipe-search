@@ -352,6 +352,20 @@ div.error {
 
 .iri {
   display: flex;
+  font-size: 1.2rem;
   flex-direction: column;
   margin-left: 3rem;
+}
+
+.MuiLinearProgress-root {
+  background-color: rgb(53, 158, 85, 0.5)!important;
+  height: 9px!important;
+  border-radius: 10px!important;
+}
+.MuiLinearProgress-barColorPrimary {
+  background-color: rgb(53, 158, 85)!important;
+
+}
+.MuiTypography-colorPrimary {
+  color: black!important;
 }

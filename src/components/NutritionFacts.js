@@ -10,6 +10,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import { createMuiTheme } from '@material-ui/core/styles';
+
 
 function LinearProgressWithLabel(props) {
     return (
@@ -18,30 +20,10 @@ function LinearProgressWithLabel(props) {
           <LinearProgress variant="determinate" {...props} />
         </Box>
         <Box minWidth={10}>
-          <Typography variant="body2" color="textSecondary">{`${Math.round(
-            props.value,
-          )}%`}</Typography>
+          <Typography >{`${Math.round(props.value,
+          )}% `}</Typography>
         </Box>
       </Box>
-    );
-  }
-  
-  LinearProgressWithLabel.propTypes = {
-    value: PropTypes.number.isRequired,
-  };
-  
-  const useStyles = makeStyles({
-    root: {
-      width: '100%',
-    },
-  });
-  
-  export default function LinearWithValueLabel() {
-    const classes = useStyles();
-    return (
-      <div className={classes.root}>
-        <LinearProgressWithLabel value={100} />
-      </div>
     );
   }
 
@@ -66,7 +48,7 @@ export const NutritionFacts = () => {
                               .map(el => ((quantity / el.value) * 100))
                               .map(el => el.toFixed(0))
         return <li key={i + Date.now()}> 
-            {`${label}: ${quantity.toFixed(2)} ${unit}`} <br /> <LinearProgressWithLabel value={nutrientValue} tooltip={`${nutrientValue} % from DV`}/>
+            {`${label}: ${quantity.toFixed(2)} ${unit}`} <br /> <LinearProgressWithLabel value={nutrientValue} className={nutrientValue > 100 && `MuiLinearProgress-barColorPrimary`}/>
         </li>})
     const { totalWeight, uri } = nutritionData;
  
