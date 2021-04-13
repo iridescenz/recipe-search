@@ -155,10 +155,9 @@ div.site-header {
 
 footer.site-footer {
   display: flex;
-  justify-content:space-evenly;
   background-color: rgba(34, 34, 34);
   color: rgb(255, 244, 230);
-  font-size: 2rem;
+  font-size: 1.3rem;
   align-items: center;
   grid-area: footer;
   min-height: 10vh;
@@ -338,7 +337,21 @@ div.error {
   text-align: center;
   vertical-align: center;
 }
-.site-footer > a {
+ a  {
   color: white;
   font-size: 2rem;
+  text-decoration: none;
+}
+
+.icons {
+  display: flex;
+  gap: 2rem;
+  margin-left: auto;
+  margin-right: 2rem;
+}
+
+.iri {
+  display: flex;
+  flex-direction: column;
+  margin-left: 3rem;
 }
