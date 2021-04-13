@@ -7,7 +7,7 @@ const Home = () => {
         <div className='main-component'>
             <Header />
             <div className="container" style={{backgroundImage: `url('diet.jpg')`}}>
-            THis is home
+            
             </div>
             <Footer />
         </div>

@@ -89,7 +89,6 @@ p {
   display:grid;
   max-width: 80vw;
   margin: auto;
-
 }
 
 .label {
@@ -97,7 +96,7 @@ p {
   margin-bottom: 1rem;
   margin-top: 1rem;
   text-transform: uppercase;
-  color: rgb(108, 133, 136);
+  color:rgb(12, 12, 12);
   text-decoration: none;
 }
 

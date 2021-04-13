@@ -8,7 +8,7 @@ export const About = () => {
         <div className='main-component'>
             <Header />
             <div className='container' style={{backgroundImage: `url('about.jpeg')`}}
-            >This is sbout</div>
+            ></div>
             <Footer />
         </div>
     )
