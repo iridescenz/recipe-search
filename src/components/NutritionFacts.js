@@ -46,7 +46,6 @@ export const NutritionFacts = () => {
         const nutrientValue = dailyRecomendationValues
                               .filter(el => el.name === label)
                               .map(el => ((quantity / el.value) * 100))
-                              .map(el => el.toFixed(0))
         return <li key={i + Date.now()}> 
             {`${label}: ${quantity.toFixed(2)} ${unit}`} <br /> <LinearProgressWithLabel value={nutrientValue} className={nutrientValue > 100 && `MuiLinearProgress-barColorPrimary`}/>
         </li>})

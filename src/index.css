@@ -337,7 +337,7 @@ div.error {
   text-align: center;
   vertical-align: center;
 }
- a  {
+ .icons > a  {
   color: white;
   font-size: 2rem;
   text-decoration: none;
