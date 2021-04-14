@@ -10,15 +10,18 @@ html {
     font-size: 7px;
   }
   .card {
-    font-size: 10px
+    font-size: 10px;
   }
   .nutrition-card > ul { 
     grid-template-columns: repeat(3, minmax(10rem, 1fr) )!important;
+    margin: 3rem;
   }
-  .nutrition-card {
-    font-size: 9px!important;
-    margin: 1rem auto!important;
+  div > .nutrition-card {
+    font-size: 9px;
+    margin: 1rem auto;
+    width: 90%;
   }
+
   .site-header > div {
     font-size: 10px;
   }
@@ -27,7 +30,7 @@ html {
     font-size: 7px;
   }
   .form {
-   width: 100%;
+   width: 90%;
    margin: auto;
   }
   .app {
@@ -130,7 +133,7 @@ p {
   
 .input {
   margin-bottom: 0;
-  padding-left: 6rem;
+  padding-left: 5rem;
 }
 
 div.site-header {
@@ -292,7 +295,7 @@ div.error {
   height: auto;
   width: 65vw;
   padding: 3rem;
-  font-size: 1,5rem;
+  font-size: 1.5rem;
   background-color: rgb(255, 255, 255);
   -webkit-box-shadow: 0px 1px 8px 3px rgba(34, 60, 80, 0.2); 
   -moz-box-shadow: 0px 1px 8px 3px rgba(34, 60, 80, 0.2); 
@@ -326,6 +329,7 @@ div.error {
 .nutrition-card > ul {
   display: grid;
   align-items: center;
+  font-size: 1.5rem;
   grid-template-columns: repeat( 4, minmax(10rem, 1fr) );
   column-gap: 3rem;
   row-gap: 3rem;

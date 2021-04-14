@@ -5,18 +5,15 @@ import NutritionCard from './NutritionCard'
 import axios from 'axios'
 import dailyRecomendationValues from './vitaminValue'
 import Form from './Form'
-import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import { createMuiTheme } from '@material-ui/core/styles';
 
 
 function LinearProgressWithLabel(props) {
     return (
       <Box display="flex" alignItems="center">
-        <Box width="90%" mr={1}>
+        <Box width="86%" mr={1}>
           <LinearProgress variant="determinate" {...props} />
         </Box>
         <Box minWidth={10}>
@@ -57,7 +54,7 @@ export const NutritionFacts = () => {
             <div className='container' style={{backgroundImage: `url('nutrition.jpg')`}}>
                 <Form 
                     handleSubmit={searchNutrition}
-                    placeholder={`e.g. 100 gram chicken liver/ 1 big apple/ 3 oz peanuts`}
+                    placeholder={`e.g. 100 gr chicken / 1 big apple/ 3 oz nuts `}
                     handleChange={e => setProduct(e.target.value)}
                     value={product}
                     name='product'

@@ -7,7 +7,6 @@ const Home = () => {
         <div className='main-component'>
             <Header />
             <div className="container" style={{backgroundImage: `url('diet.jpg')`}}>
-            
             </div>
             <Footer />
         </div>

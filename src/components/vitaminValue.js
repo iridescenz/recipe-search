@@ -5,7 +5,7 @@ const dailyRecomendationValues = [
     {name: 'Trans', value: 2}, 
     {name: 'Monounsaturated', value: 15},
     {name: 'Polyunsaturated', value: 22},
-    {name: 'Carbs', value: 100},
+    {name: 'Carbs', value: 170},
     {name: 'Fiber', value: 30},
     {name: 'Sugars', value: 30},
     {name: 'Protein', value: 70},
