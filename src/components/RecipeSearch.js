@@ -14,7 +14,7 @@ const RecipeSearch = () => {
         e.preventDefault();
         setLoading(true)
         const apiId = `a6975102&app_key=3e6a54f8480af0f1dfb6d7dc3c5cb3cd`
-        const res = axios.get(`https://api.edamam.com/search?q=${query}&app_id=${apiId}&ingr=15&from=0&to=5`)
+        const res = axios.get(`https://api.edamam.com/search?q=${query}&app_id=${apiId}&ingr=15&from=0&to=30`)
         .then(res => setData(res.data))
         .catch(er => console.log(er))
         setLoading(false)

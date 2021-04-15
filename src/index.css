@@ -83,8 +83,6 @@ p {
   background-color: rgb(255, 244, 230);;
   grid-area: main;
   min-height: 77vh;
-}
-.container  {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -389,4 +387,19 @@ div.loading  {
   justify-content: center;
   align-items: center;
   color: rgb(53, 158, 85, 0.5);
+}
+
+.container > .noresult {
+  display: flex;
+  flex-direction: column;
+  font-size: 3rem;
+}
+
+.container > .noresult > div:first-child {
+font-weight: 900;
+font-size: 5rem;
+}
+
+.container > .noresult > div:nth-child(2n):hover, .container > .noresult > div:last-child:hover {
+  color: rgb(25, 112, 51);
 }
