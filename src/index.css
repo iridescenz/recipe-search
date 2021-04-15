@@ -9,7 +9,8 @@ html {
   html {
     font-size: 7px;
   }
-  .card {
+  div.card {
+    width: 70vw;
     font-size: 10px;
   }
   .nutrition-card > ul { 
@@ -42,6 +43,12 @@ html {
 @media (max-width: 700px) { 
   html {
     font-size: 8px;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 800px) { 
+  html {
+    font-size: 9px;
   }
 }
  @media (min-width: 1400px) { 
@@ -167,13 +174,13 @@ footer.site-footer {
   width:100%; 
 }
 
-.card {
+ .card {
   align-items: center;
   place-self: center;
   height: auto;
   display: flex;
   flex-direction: column;
-  width: 38rem;
+  width: 36rem;
   background-color: rgb(255, 255, 255);
   -webkit-box-shadow: 0px 1px 8px 3px rgba(34, 60, 80, 0.2); 
   -moz-box-shadow: 0px 1px 8px 3px rgba(34, 60, 80, 0.2); 
@@ -181,13 +188,14 @@ footer.site-footer {
 }
 .card-container {
   margin-top: 3rem;
+  margin-bottom: 3rem;
   column-gap: 4rem;
   row-gap: 3rem;
   padding-left: 1rem;
   padding-right: 1rem;
   display: grid;
   background-color: rgb(226, 240, 245);
-  grid-template-columns: repeat( auto-fit, minmax(30rem, 1fr) );
+  grid-template-columns: repeat( auto-fit, minmax(33rem, 1fr) );
 }
 .ingr {
 padding-bottom: 2rem;
@@ -372,4 +380,13 @@ div.error {
 }
 .MuiTypography-colorPrimary {
   color: black!important;
+}
+
+div.loading  {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(53, 158, 85, 0.5);
 }

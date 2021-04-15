@@ -1,44 +1,25 @@
 import React, { useState} from 'react';
-import Card from './Card'
-import axios from 'axios'
-import Form from './Form'
-import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Pagination from '@material-ui/lab/Pagination';
+import Card from './Card';
+import axios from 'axios';
+import Form from './Form';
+import CircularProgressComponent from './CircularProgress'
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-      '& > * + *': {
-        marginTop: theme.spacing(2),
-      },
-    },
-  }));
   
-
 const RecipeSearch = () => {
     const [query, setQuery] = useState('');
-    const [pageData, setPageData] = useState('');
-    const [data, setData] = useState('');
-    const classes = useStyles();
-    const [page, setPage] = useState(1);
+    const [loading, setLoading] = useState(false);
+    const [data, setData] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
     const searchRecipe =  (e) => {
         e.preventDefault();
-        setPageData(query)
+        setLoading(true)
         const apiId = `a6975102&app_key=3e6a54f8480af0f1dfb6d7dc3c5cb3cd`
-        const res = axios.get(`https://api.edamam.com/search?q=${query}&app_id=${apiId}&from=0&to=9&ingr=15`)
+        const res = axios.get(`https://api.edamam.com/search?q=${query}&app_id=${apiId}&ingr=15&from=0&to=5`)
         .then(res => setData(res.data))
         .catch(er => console.log(er))
+        setLoading(false)
         setQuery('')
     }
-        const handlePageChange = (event, value) => {
-          setPage(value);
-          const apiId = `a6975102&app_key=3e6a54f8480af0f1dfb6d7dc3c5cb3cd`
-          const res = axios.get(`https://api.edamam.com/search?q=${pageData}&app_id=${apiId}&from=${page > 1 ? page * 9 : page}&to=${page > 1 ? page * 9 + 9 : page + 9}&ingr=15`)
-          .then(res => setData(res.data))
-          .catch(er => console.log(er))
-        };
-        console.log(data)
-
     const showList = data.count  
     ? data.hits.map(el => el.recipe).map((el, i) => 
         <Card key={i} 
@@ -49,7 +30,7 @@ const RecipeSearch = () => {
         />) 
         : data.count === 0 ? <div className='noresult'><div>No results found </div></div> : ''
     
-    return (
+    return ( 
         <div className="container" style={showList ? {background: 'rgb(226, 240, 245)'}:{backgroundImage: `url('food.jpeg')`}}>
         <Form 
             handleSubmit={searchRecipe}
@@ -58,9 +39,9 @@ const RecipeSearch = () => {
             placeholder={`e.g. apple pie`}
             name='recipe'
         />
-        <div className='card-container'>{showList}</div>
-        {showList && 
-            <Pagination count={10} page={page} size='large' onChange={handlePageChange} />}
+       {  loading ? <CircularProgressComponent /> : <div className='card-container'>{showList}</div>}
+        {/* {showList && 
+            <Pagination count={data.count > 100 ? 11 : Math.round(data.count / 9)} page={page} size='large' onChange={handlePageChange} />} */}
         </div>
     )
 }
