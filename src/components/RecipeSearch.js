@@ -4,10 +4,25 @@ import axios from 'axios';
 import Form from './Form';
 import CircularProgressComponent from './CircularProgress';
 import PaginationI from './PaginationI'
+import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import Pagination from '@material-ui/lab/Pagination';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& > * + *': {
+      marginTop: theme.spacing(2),
+    },
+  },
+}));
+
 
   
 const RecipeSearch = () => {
     const [query, setQuery] = useState('');
+    const classes = useStyles();
+    const handleChange = (event, value) => {
+        setCurrentPage(value)};
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -60,6 +75,9 @@ const RecipeSearch = () => {
             totalPosts={data.count > 100  ? 100 : data.count}
             paginate={paginate}
         />}
+        <div className={classes.root}>
+            <Pagination count={data.count > 100  ? 10  : Math.round(data.count / 10)} page={currentPage} onChange={handleChange} />
+        </div>
         </div>
     )
 }
