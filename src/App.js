@@ -15,7 +15,7 @@ const App = () => {
         <Route path='/low-carb-recipes' exact component={LowcarbRecipes} />
         <Route path='/nutrition-facts' exact component={NutritionFacts} />
         <Route path='/recipe-search' exact component={RecipeSearchComponent} />
-        <Route path='/' component={ErrorCase} />
+        <Route path='/'  />
       </Switch>
     </BrowserRouter>
   );

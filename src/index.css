@@ -400,6 +400,7 @@ font-weight: 900;
 font-size: 5rem;
 }
 
-.container > .noresult > div:nth-child(2n):hover, .container > .noresult > div:last-child:hover {
+.container > .noresult > div:not(:first-child):hover {
   color: rgb(25, 112, 51);
 }
+
