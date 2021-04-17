@@ -28,13 +28,12 @@ export const LowcarbRecipes = () => {
     return (
         <div className='main-component' >
             <Header />
-            <div className='container' style={showLowCarbList ? {background: 'rgb(226, 240, 245)'}:{backgroundImage: `url('keto.jpg')`}} >
+            <div className='container' style={ showLowCarbList ? {background: 'rgb(226, 240, 245)'}:{backgroundImage: `url('keto.jpg')`}} >
                 <Form 
                     handleSubmit={searchLowCarbRecipe}
                     handleChange={e => setQuery(e.target.value)}
                     value={query}
                     placeholder={`e.g. keto waffles`}
-                    name='low carb recipe'
                 />
             <div className='card-container'>{showLowCarbList}</div>
             </div>

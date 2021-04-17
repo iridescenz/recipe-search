@@ -1,10 +1,9 @@
 import React from 'react'
 import { GoSearch } from 'react-icons/go'
 
-const Form = ({ handleSubmit, name, handleChange, value, placeholder }) => {
+const Form = ({ handleSubmit, handleChange, value, placeholder }) => {
     return (
         <form className='form' onSubmit={handleSubmit}>
-            <label className='label' htmlFor='query'>search for a {name}</label>
             <div className='icon'> <GoSearch /></div>
                 <input className='input' 
                     type='text' 

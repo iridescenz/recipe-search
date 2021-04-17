@@ -3,7 +3,6 @@ import Card from './Card';
 import axios from 'axios';
 import Form from './Form';
 import CircularProgressComponent from './CircularProgress';
-import PaginationI from './PaginationI'
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Pagination from '@material-ui/lab/Pagination';
@@ -26,10 +25,11 @@ const RecipeSearch = () => {
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage] = useState(10);
+    const [postsPerPage] = useState(12);
     const searchRecipe =  (e) => {
         e.preventDefault();
-        setLoading(true)
+        setCurrentPage(1);
+        setLoading(true);
         const apiId = `a6975102&app_key=3e6a54f8480af0f1dfb6d7dc3c5cb3cd`
         const res = axios.get(`https://api.edamam.com/search?q=${query}&app_id=${apiId}&ingr=15&from=0&to=100`)
         .then(res => setData(res.data))
@@ -40,13 +40,11 @@ const RecipeSearch = () => {
     useEffect(() => {
         window.scrollTo(40, 0)
       }, [currentPage])
-
     
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = data.count && data.hits.slice(indexOfFirstPost, indexOfLastPost);
 
-    const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     const showList = data.count  
     ? currentPosts.map(el => el.recipe).map((el, i) => 
@@ -65,19 +63,12 @@ const RecipeSearch = () => {
             handleChange={e => setQuery(e.target.value)}
             value={query}
             placeholder={`e.g. apple pie`}
-            name='recipe'
         />
        { loading ? <CircularProgressComponent /> : <div className='card-container'>{showList}</div>}
-
         {showList && 
-            <PaginationI 
-            postPerPage={postsPerPage} 
-            totalPosts={data.count > 100  ? 100 : data.count}
-            paginate={paginate}
-        />}
         <div className={classes.root}>
-            <Pagination count={data.count > 100  ? 10  : Math.round(data.count / 10)} page={currentPage} onChange={handleChange} />
-        </div>
+          <ul className='pagination-list'> <Pagination count={data.count > 100  ? 9  : Math.round(data.count / 10)} page={currentPage} onChange={handleChange} size='large' /> </ul>
+        </div>}
         </div>
     )
 }
