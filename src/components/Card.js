@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BsChevronDoubleDown } from 'react-icons/bs';
 import { BsChevronDoubleUp } from 'react-icons/bs';
 import { BsLink45Deg } from 'react-icons/bs';
+
 
 const Card = ({
     label,
@@ -10,6 +11,9 @@ const Card = ({
     url
 }) => { 
     const [showIngr, setShowIngr] = useState(false);
+    useEffect(() => {
+        setShowIngr(false);
+    }, [image])
     return (
         <div className='card'>
             <div className='label'>{label}</div>

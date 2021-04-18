@@ -4,7 +4,6 @@ import axios from 'axios';
 import Form from './Form';
 import CircularProgressComponent from './CircularProgress';
 import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
 import Pagination from '@material-ui/lab/Pagination';
 
 const useStyles = makeStyles((theme) => ({
@@ -14,8 +13,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-
-
   
 const RecipeSearch = () => {
     const [query, setQuery] = useState('');
@@ -38,7 +35,7 @@ const RecipeSearch = () => {
         setQuery('');
     }
     useEffect(() => {
-        window.scrollTo(40, 0)
+        window.scrollTo(40, 0);
       }, [currentPage])
     
     const indexOfLastPost = currentPage * postsPerPage;
