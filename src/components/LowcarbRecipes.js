@@ -52,25 +52,28 @@ export const LowcarbRecipes = () => {
         image={el.image}
         ingredientLines={el.ingredientLines.map((el, i) => <li key={i} >{el}</li>)}
         />) 
-        : data.count === 0 ? <div className='noresult'><div>No results found </div></div> : ''
+        : ''
     return (
-        <div className='main-component' >
-            <Header />
-            <div className='container' style={ showLowCarbList ? {background: 'rgb(226, 240, 245)'}:{backgroundImage: `url('keto.jpg')`}} >
-                <Form 
-                    handleSubmit={searchLowCarbRecipe}
-                    handleChange={e => setQuery(e.target.value)}
-                    value={query}
-                    placeholder={`e.g. keto waffles`}
-                />
-       { loading ? <CircularProgressComponent /> : <div className='card-container'>{showLowCarbList}</div>}
-        {showLowCarbList && 
-        <div className={classes.root}>
-          <ul className='pagination-list'> <Pagination count={data.count > 100  ? 9  : Math.round(data.count / 10)} page={currentPage} onChange={handleChange} size='large' /> </ul>
-        </div>}
-            </div>
-            <Footer />
+      <div className='main-component' >
+        <Header />
+        <div className='container' style={ data.count > 0 ? {background: 'rgb(226, 240, 245)'}:{backgroundImage: `url('keto.jpg')`}} >
+        <Form 
+            handleSubmit={searchLowCarbRecipe}
+            handleChange={e => setQuery(e.target.value)}
+            value={query}
+            placeholder={`e.g. keto waffles`}
+        />
+        { data.count === 0  ? <div className='noresult'><div>No results found </div></div> : ''}
+        { loading ? <CircularProgressComponent /> : <div className='card-container'>{showLowCarbList ? showLowCarbList : ''}</div>}
+        { data.count > 0 && 
+          <div className={classes.root}>
+            <ul className='pagination-list'> <Pagination count={data.count > 100  ? 9  : Math.round(data.count / 10)} page={currentPage} onChange={handleChange} size='large' /> </ul>
+          </div>
+        }
+
         </div>
+        <Footer />
+      </div>
     )
 }
 

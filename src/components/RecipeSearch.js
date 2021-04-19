@@ -41,7 +41,7 @@ const RecipeSearch = () => {
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = data.count && data.hits.slice(indexOfFirstPost, indexOfLastPost);
-
+  
 
     const showList = data.count  
     ? currentPosts.map(el => el.recipe).map((el, i) => 
@@ -51,18 +51,19 @@ const RecipeSearch = () => {
             image={el.image}
             ingredientLines={el.ingredientLines.map((el, i) => <li key={i} >{el}</li>)}
         />) 
-        : data.count === 0 ? <div className='noresult'><div>No results found </div></div> : ''
+        : ''
     
     return ( 
-        <div className="container" style={showList ? {background: 'rgb(226, 240, 245)'}:{backgroundImage: `url('food.jpeg')`}}>
+        <div className="container" style={data.count > 0 ? {background: 'rgb(226, 240, 245)'}:{backgroundImage: `url('food.jpeg')`}}>
         <Form 
             handleSubmit={searchRecipe}
             handleChange={e => setQuery(e.target.value)}
             value={query}
             placeholder={`e.g. apple pie`}
         />
-       { loading ? <CircularProgressComponent /> : <div className='card-container'>{showList}</div>}
-        {showList && 
+        { data.count === 0  ? <div className='noresult'><div>No results found </div></div> : ''}
+        { loading ? <CircularProgressComponent /> : <div className='card-container'>{showList}</div>}
+        {data.count > 0 && 
         <div className={classes.root}>
           <ul className='pagination-list'> <Pagination count={data.count > 100  ? 9  : Math.round(data.count / 10)} page={currentPage} onChange={handleChange} size='large' /> </ul>
         </div>}
