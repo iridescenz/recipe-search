@@ -54,7 +54,7 @@ const RecipeSearch = () => {
         : ''
     
     return ( 
-        <div className="container" style={data.count > 0 ? {background: 'rgb(226, 240, 245)'}:{backgroundImage: `url('food.jpeg')`}}>
+        <div className="container" style={data.count > 0 ? {background: 'rgb(226, 240, 245)'}:{backgroundImage: `url('food.jpg')`}}>
         <Form 
             handleSubmit={searchRecipe}
             handleChange={e => setQuery(e.target.value)}
