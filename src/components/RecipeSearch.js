@@ -34,6 +34,7 @@ const RecipeSearch = () => {
         setLoading(false);
         setQuery('');
     }
+    console.log(data)
     useEffect(() => {
         window.scrollTo(40, 0);
       }, [currentPage])
@@ -54,7 +55,10 @@ const RecipeSearch = () => {
         : ''
     
     return ( 
-        <div className="container" style={data.count > 0 ? {background: 'rgb(226, 240, 245)'}:{backgroundImage: `url('food.jpg')`}}>
+        <div className="container" style={data.count > 0 
+          ? {background: 'rgb(226, 240, 245)'}
+          :{backgroundImage: `url('food.jpg')`}}
+        >
         <Form 
             handleSubmit={searchRecipe}
             handleChange={e => setQuery(e.target.value)}
