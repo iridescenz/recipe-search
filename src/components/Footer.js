@@ -1,9 +1,9 @@
-import React from 'react'
-import { GoMarkGithub } from 'react-icons/go'
-import { SiCodewars } from 'react-icons/si'
-import { AiOutlineFileText } from 'react-icons/ai'
-import { RiWhatsappLine } from 'react-icons/ri'
-import { FaTelegramPlane } from 'react-icons/fa'
+import React from 'react';
+import { GoMarkGithub } from 'react-icons/go';
+import { SiCodewars } from 'react-icons/si';
+import { AiOutlineFileText } from 'react-icons/ai';
+import { RiWhatsappLine } from 'react-icons/ri';
+import { FaTelegramPlane } from 'react-icons/fa';
 
 const Footer = () => {
     return (
@@ -22,4 +22,4 @@ const Footer = () => {
         </footer>
     )
 }
-export default React.memo(Footer)
+export default React.memo(Footer);

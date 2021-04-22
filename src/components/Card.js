@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { BsChevronDoubleDown } from 'react-icons/bs';
 import { BsChevronDoubleUp } from 'react-icons/bs';
 import { VscLink } from 'react-icons/vsc';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Tooltip from '@material-ui/core/Tooltip';
-import Typography from '@material-ui/core/Typography';
 
 
 const LightTooltip = withStyles((theme) => ({
@@ -16,7 +15,6 @@ const LightTooltip = withStyles((theme) => ({
       fontSize: 11,
     },
   }))(Tooltip);
-  
 
 const Card = ({
     label,
@@ -24,10 +22,12 @@ const Card = ({
     image,
     url
 }) => { 
+
     const [showIngr, setShowIngr] = useState(false);
     useEffect(() => {
         setShowIngr(false);
-    }, [image])
+    }, [image]);
+    
     return (
         <div className='card'>
             <div className='label'>{label}</div>
@@ -38,9 +38,9 @@ const Card = ({
                 ? <BsChevronDoubleDown /> 
                 : <> <BsChevronDoubleUp /> 
                 {showIngr && <ul className='ingr'>{ingredientLines}</ul>}
-                <a href={url} style={{fontSize:'2rem', color:'black'}}>           
-                    <LightTooltip title="See full recipe" placement="right">
-                    <Button><VscLink style={{color: 'red!important'}}/></Button>
+                <a href={url}>           
+                    <LightTooltip title='See full recipe' placement='right'>
+                    <Button><VscLink/></Button>
                    </LightTooltip></a> 
                 </>}    
             </div>

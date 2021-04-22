@@ -1,10 +1,10 @@
 
-import  { BrowserRouter, Route, Switch } from 'react-router-dom'
-import  Home from './components/Home'
-import { LowcarbRecipes } from './components/LowcarbRecipes'
-import { NutritionFacts } from './components/NutritionFacts'
-import {RecipeSearchComponent} from './components/RecipeSearchComponent'
-import ErrorCase from './components/ErrorCase'
+import  { BrowserRouter, Route, Switch } from 'react-router-dom';
+import  Home from './components/Home';
+import { LowcarbRecipes } from './components/LowcarbRecipes';
+import { NutritionFacts } from './components/NutritionFacts';
+import {RecipeSearchComponent} from './components/RecipeSearchComponent';
+import ErrorCase from './components/ErrorCase';
 
 
 const App = () => {

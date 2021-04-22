@@ -34,4 +34,4 @@ const dailyRecomendationValues = [
 
 ]
 
-export default dailyRecomendationValues
+export default dailyRecomendationValues;

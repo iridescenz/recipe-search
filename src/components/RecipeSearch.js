@@ -65,13 +65,22 @@ const RecipeSearch = () => {
             value={query}
             placeholder={`e.g. apple pie`}
         />
+
         { data.count === 0  ? <div className='noresult'><div>No results found </div></div> : ''}
         { loading ? <CircularProgressComponent /> : <div className='card-container'>{showList}</div>}
         {data.count > 0 && 
         <div className={classes.root}>
-          <ul className='pagination-list'> <Pagination count={data.count > 100  ? 9  : Math.round(data.count / 10)} page={currentPage} onChange={handleChange} size='large' /> </ul>
-        </div>}
+          <ul className='pagination-list'> 
+            <Pagination 
+              count={data.count > 100  ? 9  : Math.round(data.count / 10)} 
+              page={currentPage} 
+              onChange={handleChange} 
+              size='large' 
+            /> 
+          </ul>
+        </div>
+        }
         </div>
     )
 }
-export default RecipeSearch
+export default RecipeSearch;

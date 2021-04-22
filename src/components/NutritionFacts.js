@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
-import Header from './Header'
-import Footer from './Footer'
-import NutritionCard from './NutritionCard'
-import axios from 'axios'
-import dailyRecomendationValues from './vitaminValue'
-import Form from './Form'
+import React, { useState } from 'react';
+import Header from './Header';
+import Footer from './Footer';
+import NutritionCard from './NutritionCard';
+import axios from 'axios';
+import dailyRecomendationValues from './vitaminValue';
+import Form from './Form';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
@@ -38,15 +38,22 @@ export const NutritionFacts = () => {
         .catch(er => console.log(er))
         setProduct('');
     }
+
     const nutrients = nutritionData && Object.entries(nutritionData.totalNutrients).map(el => Object.entries(el)).map((el, i) =>{
         const {label, quantity, unit} = el[1][1]; 
         const nutrientValue = dailyRecomendationValues
                               .filter(el => el.name === label)
                               .map(el => ((quantity / el.value) * 100))
-        return <li key={i + Date.now()}> 
-            {`${label}: ${quantity.toFixed(1)} ${unit}`} <br /> <LinearProgressWithLabel value={nutrientValue} className={nutrientValue > 100 && `MuiLinearProgress-barColorPrimary`}/>
-        </li>})
-    const { totalWeight, uri } = nutritionData;
+        return <li key={i}> 
+            {`${label}: ${quantity.toFixed(1)} ${unit}`} <br/> 
+            <LinearProgressWithLabel 
+              value={nutrientValue} 
+              className={nutrientValue > 100 && `MuiLinearProgress-barColorPrimary`}
+            />
+        </li>
+    })
+
+    const { totalWeight } = nutritionData;
  
     return (
         <div className='main-component' >
@@ -58,13 +65,15 @@ export const NutritionFacts = () => {
                     handleChange={e => setProduct(e.target.value)}
                     value={product}
                 />
+
                 {totalWeight === undefined && ''} 
                 {totalWeight === 0  &&  <div className='noresult'> <div >{`No results found for ${productName}`}</div> </div>}
                 {totalWeight !== 0 && totalWeight !== undefined 
                     && <NutritionCard 
                         label={productName}
                         nutrients={nutrients} 
-                        weight={`Total weight: ${totalWeight.toFixed(0)} gram`} /> }
+                        weight={`Total weight: ${totalWeight.toFixed(0)} gram`} /> 
+                }
             </div>
             <Footer />
         </div>
