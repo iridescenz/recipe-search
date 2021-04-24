@@ -15,72 +15,70 @@ const useStyles = makeStyles((theme) => ({
 }));
   
 const RecipeSearch = () => {
-    const [query, setQuery] = useState('');
-    const classes = useStyles();
-    const handleChange = (event, value) => {
-        setCurrentPage(value)};
-    const [loading, setLoading] = useState(false);
-    const [data, setData] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage] = useState(12);
-    const searchRecipe =  (e) => {
-        e.preventDefault();
-        setCurrentPage(1);
-        setLoading(true);
-        const apiId = `a6975102&app_key=3e6a54f8480af0f1dfb6d7dc3c5cb3cd`
-        const res = axios.get(`https://api.edamam.com/search?q=${query}&app_id=${apiId}&ingr=15&from=0&to=100`)
-        .then(res => setData(res.data))
-        .catch(er => console.log(er))
-        setLoading(false);
-        setQuery('');
+  const [query, setQuery] = useState('');
+  const classes = useStyles();
+  const handleChange = (event, value) => {setCurrentPage(value)};
+  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(12);
+  const searchRecipe =  (e) => {
+    e.preventDefault();
+    setCurrentPage(1);
+    setLoading(true);
+    const apiId = `a6975102&app_key=3e6a54f8480af0f1dfb6d7dc3c5cb3cd`
+    const res = axios.get(`https://api.edamam.com/search?q=${query}&app_id=${apiId}&ingr=15&from=0&to=100`)
+    .then(res => setData(res.data))
+    .catch(er => console.log(er))
+    setLoading(false);
+    setQuery('');
+  }
+  console.log(data)
+  useEffect(() => {
+    window.scrollTo(40, 0);
+  }, [currentPage])
+    
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = data.count && data.hits.slice(indexOfFirstPost, indexOfLastPost);
+
+  const showList = data.count  
+  ? currentPosts.map(el => el.recipe).map((el, i) => 
+    <Card key={i} 
+      label={el.label}
+      url={el.url} 
+      image={el.image}
+      ingredientLines={el.ingredientLines.map((el, i) => <li key={i} >{el}</li>)}
+    />) 
+  : ''
+    
+  return ( 
+    <div className="container" style={data.count > 0 
+      ? {background: 'rgb(226, 240, 245)'}
+      :{backgroundImage: `url('food.jpg')`}}
+    >
+    <Form 
+      handleSubmit={searchRecipe}
+      handleChange={e => setQuery(e.target.value)}
+      value={query}
+      placeholder={`e.g. apple pie`}
+    />
+
+    { data.count === 0  ? <div className='noresult'><div>No results found </div></div> : ''}
+    { loading ? <CircularProgressComponent /> : <div className='card-container'>{showList}</div>}
+    {data.count > 0 && 
+    <div className={classes.root}>
+      <ul className='pagination-list'> 
+        <Pagination 
+          count={data.count > 100  ? 9  : Math.round(data.count / 10)} 
+          page={currentPage} 
+          onChange={handleChange} 
+          size='large' 
+        /> 
+      </ul>
+    </div>
     }
-    console.log(data)
-    useEffect(() => {
-        window.scrollTo(40, 0);
-      }, [currentPage])
-    
-    const indexOfLastPost = currentPage * postsPerPage;
-    const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    const currentPosts = data.count && data.hits.slice(indexOfFirstPost, indexOfLastPost);
-  
-
-    const showList = data.count  
-    ? currentPosts.map(el => el.recipe).map((el, i) => 
-        <Card key={i} 
-            label={el.label}
-            url={el.url} 
-            image={el.image}
-            ingredientLines={el.ingredientLines.map((el, i) => <li key={i} >{el}</li>)}
-        />) 
-        : ''
-    
-    return ( 
-        <div className="container" style={data.count > 0 
-          ? {background: 'rgb(226, 240, 245)'}
-          :{backgroundImage: `url('food.jpg')`}}
-        >
-        <Form 
-            handleSubmit={searchRecipe}
-            handleChange={e => setQuery(e.target.value)}
-            value={query}
-            placeholder={`e.g. apple pie`}
-        />
-
-        { data.count === 0  ? <div className='noresult'><div>No results found </div></div> : ''}
-        { loading ? <CircularProgressComponent /> : <div className='card-container'>{showList}</div>}
-        {data.count > 0 && 
-        <div className={classes.root}>
-          <ul className='pagination-list'> 
-            <Pagination 
-              count={data.count > 100  ? 9  : Math.round(data.count / 10)} 
-              page={currentPage} 
-              onChange={handleChange} 
-              size='large' 
-            /> 
-          </ul>
-        </div>
-        }
-        </div>
-    )
+    </div>
+  )
 }
 export default RecipeSearch;

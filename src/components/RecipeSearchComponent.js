@@ -5,11 +5,11 @@ import RecipeSearch from './RecipeSearch';
 
 
 export const RecipeSearchComponent = () => {
-    return (
-        <div className='app'>
-            <Header />
-            <RecipeSearch />
-            <Footer />
-        </div>
-    )
+  return (
+    <div className='app'>
+      <Header />
+      <RecipeSearch />
+      <Footer />
+    </div>
+  )
 }
