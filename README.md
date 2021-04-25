@@ -14,6 +14,6 @@ Nutrition facts - shows information about product nutritional value, energy, vit
 User must indicate product name and product weight (!) to get nutritional information, will be fixed soon (need to specify default weight of the product).
 Query examples: '100 gram beef', '30 gr chicken liver', '5 oz almonds', '2 slices bread' etc.
 
-Home page in progress, soon information will ba added - recipes of different dishtypes, like breakfast ideas, dishes with eggs, sandwiches etc, not decided yet 😅.
+Home page in progress, soon information will be added - recipes of different dishtypes, like breakfast ideas, dishes with eggs, sandwiches etc, not decided yet 😅.
 
 If you have any questions or ideas, please contact me  - turenko7irina@mail.ru, will be happy to hear your feedback.
