@@ -33,7 +33,7 @@ export const NutritionFacts = () => {
     setProductName(product);
     const apiKey = `ec4f9e290ce094b4adcf78bbfd65062e`;
     const apiId = `d3f05ade`;
-    const res = axios.get(`https://api.edamam.com/api/nutrition-data?app_id=${apiId}&app_key=${apiKey}&ingr=${encodeURIComponent(product)}`)
+    const res = axios.get(`https://api.edamam.com/api/nutrition-data?app_id=${apiId}&app_key=${apiKey}&ingr=${product.match('oz', 'gr', 'slice', 'kg') ? encodeURIComponent(product) : encodeURIComponent(product + '%100 gram') }`)
     .then(res => setNutritionData(res.data))
     .catch(er => console.log(er))
     setProduct('');
