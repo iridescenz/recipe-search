@@ -16,4 +16,5 @@ const NutritionCard = ({
 		</div>
 	)
 }
+// add default weight !
 export default NutritionCard;

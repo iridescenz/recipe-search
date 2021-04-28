@@ -65,16 +65,16 @@ export const NutritionFacts = () => {
               placeholder={`e.g. 100 gr chicken / 1 big apple/ 3 oz nuts `}
               handleChange={e => setProduct(e.target.value)}
               value={product}
-          />
-
+          /> 
           {totalWeight === undefined && ''} 
           {totalWeight === 0  &&  <div className='noresult'> <div >{`No results found for ${productName}`}</div> </div>}
-          {totalWeight !== 0 && totalWeight !== undefined 
-              && <NutritionCard 
-                    label={productName}
-                    nutrients={nutrients} 
-                    weight={`Total weight: ${totalWeight.toFixed(0)} gram`} 
-                  /> 
+          {totalWeight !== 0 && 
+            totalWeight !== undefined 
+            && <NutritionCard 
+                  label={productName}
+                  nutrients={nutrients} 
+                  weight={`Total weight: ${totalWeight.toFixed(0)} gram`} 
+                /> 
           }
         </div>
         <Footer />

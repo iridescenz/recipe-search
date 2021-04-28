@@ -25,7 +25,7 @@ const RecipeSearch = () => {
   const searchRecipe =  (e) => {
     e.preventDefault();
     setCurrentPage(1);
-    setLoading(true);
+    setLoading(false);
     const apiId = `a6975102&app_key=3e6a54f8480af0f1dfb6d7dc3c5cb3cd`
     const res = axios.get(`https://api.edamam.com/search?q=${query}&app_id=${apiId}&ingr=15&from=0&to=100`)
     .then(res => setData(res.data))
@@ -65,7 +65,7 @@ const RecipeSearch = () => {
     />
 
     { data.count === 0  ? <div className='noresult'><div>No results found </div></div> : ''}
-    { loading ? <CircularProgressComponent /> : <div className='card-container'>{showList}</div>}
+    { loading ? <CircularProgressComponent /> : <div className='card-container'>{showList}</div>} ||
     {data.count > 0 && 
     <div className={classes.root}>
       <ul className='pagination-list'> 

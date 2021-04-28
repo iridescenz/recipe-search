@@ -22,6 +22,8 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
+			{/* image categories breakfast dinner low carb egg dishes soups  */}
+			{/* add diets  */}
 			<Footer />
 		</div>
 	)
