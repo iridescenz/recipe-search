@@ -5,12 +5,14 @@ import { LowcarbRecipes } from './components/LowcarbRecipes';
 import { NutritionFacts } from './components/NutritionFacts';
 import {RecipeSearchComponent} from './components/RecipeSearchComponent';
 import ErrorCase from './components/ErrorCase';
+import GetRandomRecipes from './components/GetRandomRecipes'
 
 
 const App = () => {
   return (
     <BrowserRouter>
       <Switch>
+        <Route path='/random' exact component={GetRandomRecipes} />
         <Route path='/' exact component={Home} />
         <Route path='/low-carb-recipes' exact component={LowcarbRecipes} />
         <Route path='/nutrition-facts' exact component={NutritionFacts} />
