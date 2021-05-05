@@ -1,3 +1,4 @@
+
 const dailyRecomendationValues = [
 	{name: 'Energy', value: 2000 },
 	{name: 'Fat', value: 50},

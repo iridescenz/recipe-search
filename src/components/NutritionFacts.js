@@ -62,7 +62,7 @@ export const NutritionFacts = () => {
         <div className='container' style={{backgroundImage: `url('nutrition.jpg')`}}>
           <Form 
               handleSubmit={searchNutrition}
-              placeholder={`e.g. 100 gr chicken / 1 big apple/ 3 oz nuts `}
+              placeholder={`e.g. 100 gr chicken / 3 oz nuts `}
               handleChange={e => setProduct(e.target.value)}
               value={product}
           /> 
