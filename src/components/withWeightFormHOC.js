@@ -4,7 +4,6 @@ const withWeightFormHOC = (component) => {
     return (
       <>
       <Component {...props} weight={true}/>
-      {console.log(props)}
       </>
     )
   }
