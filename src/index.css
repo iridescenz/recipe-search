@@ -5,6 +5,12 @@ html {
   font-family: galano_grotesque,Helvetica Neue,Helvetica,Arial,Sans,sans-serif;
 }
 
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+
 @media (max-width: 600px) { 
   html {
     font-size: 7px;
