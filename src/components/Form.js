@@ -1,8 +1,8 @@
-import React from 'react';
-import { GoSearch } from 'react-icons/go';
+import React from 'react'
+import { GoSearch } from 'react-icons/go'
 
 const Form = ({ handleSubmit, handleChange, value, placeholder, weight }) => {
-	return (
+  return (
     <form className='form' onSubmit={handleSubmit}>
       <div className='icon'>
         <GoSearch />
@@ -21,13 +21,13 @@ const Form = ({ handleSubmit, handleChange, value, placeholder, weight }) => {
           className='input'
           type='text'
           name='weight'
-          placeholder={"enter weight"}
+          placeholder={'enter weight'}
         />
       )}
       <button className='button' type='submit'>
         Search
       </button>
     </form>
-  );
+  )
 }
-export default Form;
+export default Form

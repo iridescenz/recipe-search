@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const NutritionCard = ({ label, weight, calories, nutrients }) => {
   return (
@@ -8,6 +8,6 @@ const NutritionCard = ({ label, weight, calories, nutrients }) => {
       <div>{weight}</div>
       <ul className='nutrition'>{nutrients} </ul>
     </div>
-  );
-};
-export default NutritionCard;
+  )
+}
+export default NutritionCard

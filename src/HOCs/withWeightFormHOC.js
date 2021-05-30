@@ -1,12 +1,12 @@
 const withWeightFormHOC = (component) => {
-  const Component = component;
-  return function( props ) {
+  const Component = component
+  return function (props) {
     return (
       <>
-      <Component {...props} weight={true}/>
+        <Component {...props} weight={true} />
       </>
     )
   }
 }
 
-export default withWeightFormHOC;
+export default withWeightFormHOC

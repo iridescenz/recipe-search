@@ -1,8 +1,7 @@
-import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
-import RecipeSearch from './RecipeSearch';
-
+import React from 'react'
+import Header from './Header'
+import Footer from './Footer'
+import RecipeSearch from './RecipeSearch'
 
 export const RecipeSearchComponent = () => {
   return (
