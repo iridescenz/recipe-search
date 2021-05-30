@@ -11,8 +11,8 @@ Query examples: 'keto waffles', 'low carb ice cream', low carb dough', 'low carb
 I'm not happy with the results, some of them not low carb at all, but that's what free api can offer.
 
 Nutrition facts - shows information about product nutritional value, energy, vitamins and shows percent from daily value. (https://www.edamam.com  - Nutrition Analysis API)
-User must indicate product name and product weight (!) to get nutritional information, will be fixed soon (need to specify default weight of the product).
-Query examples: '100 gram beef', '30 gr chicken liver', '5 oz almonds', '2 slices bread' etc.
+User must indicate product name and product weight, if needed, default weight = 100gr.
+Query examples: 'beef', '30 gr chicken liver', '5 oz almonds', '2 slices bread' etc.
 
 Home page in progress, soon information will be added - recipes of different dishtypes, like breakfast ideas, dishes with eggs, sandwiches etc, not decided yet 😅.
 
